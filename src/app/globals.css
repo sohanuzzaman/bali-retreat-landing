@@ -1,26 +1,195 @@
+/* Font imports for mystical typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 @import "tailwindcss";
 
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Mystical feminine patterns */
+.lemurian-pattern {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(168, 218, 220, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(203, 170, 203, 0.15) 0%, transparent 50%);
+  background-size: 120px 120px;
+}
+
+.crystal-divider {
+  background: linear-gradient(45deg, transparent 40%, var(--color-moon-gold) 50%, transparent 60%);
+  height: 3px;
+  position: relative;
+}
+
+.crystal-divider::before,
+.crystal-divider::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  width: 12px;
+  height: 12px;
+  background: var(--color-moon-gold);
+  transform: rotate(45deg);
+  border-radius: 2px;
+}
+
+.crystal-divider::before {
+  left: 25%;
+}
+
+.crystal-divider::after {
+  right: 25%;
+}
+
+/* Sacred geometry patterns */
+.sacred-geometry {
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(255, 217, 160, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 70% 70%, rgba(168, 218, 220, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(203, 170, 203, 0.05) 0%, transparent 60%);
+  background-size: 200px 200px, 150px 150px, 300px 300px;
+}
+
+/* Floating sparkles animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Mystical glow effect */
+.mystical-glow {
+  box-shadow: 
+    0 0 20px rgba(255, 217, 160, 0.3),
+    0 0 40px rgba(255, 217, 160, 0.2),
+    0 0 60px rgba(255, 217, 160, 0.1);
+}
+
+/* Sacred text glow */
+.sacred-text-glow {
+  text-shadow: 
+    0 0 10px rgba(255, 217, 160, 0.5),
+    0 0 20px rgba(255, 217, 160, 0.3),
+    0 0 30px rgba(255, 217, 160, 0.2);
+}
+
+/* Mystical Feminine Color Palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-pastel-turquoise: #A8DADC;
+  --color-lilac-mist: #CBAACB;
+  --color-moon-gold: #FFD9A0;
+  --color-pure-white: #FFFFFF;
+  --color-deep-jungle: #264653;
+  
+  /* Legacy colors for compatibility */
+  --color-teal: #264653;
+  --color-aquamarine: #A8DADC;
+  --color-lilac: #CBAACB;
+  --color-gold: #FFD9A0;
+  --color-sand: #FFFFFF;
+  
+  --background: #FFFFFF;
+  --foreground: #264653;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', 'Lato', sans-serif;
+  line-height: 1.7;
+}
+
+/* Font family utilities */
+.font-playfair { font-family: 'Playfair Display', serif; }
+.font-cormorant { font-family: 'Cormorant Garamond', serif; }
+.font-dancing-script { font-family: 'Dancing Script', cursive; }
+.font-great-vibes { font-family: 'Great Vibes', cursive; }
+.font-open-sans { font-family: 'Open Sans', sans-serif; }
+.font-lato { font-family: 'Lato', sans-serif; }
+/* Additional styling for better visual appeal */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+input:focus, button:focus {
+  outline: none;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #A8DADC, #FFD9A0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced shadows */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(168, 218, 220, 0.3);
+}
+
+/* Improved animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Better button hover effects */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-shimmer:hover::before {
+  left: 100%;
 }

@@ -55,76 +55,121 @@ const AccommodationSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
-          {/* Left side - Accommodation selector */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            {accommodations.map((accommodation, index) => (
-              <div
-                key={index}
-                className={`cursor-pointer transition-all duration-300 ${
-                  activeAccommodation === index ? 'scale-105' : 'hover:scale-102'
-                }`}
-                onClick={() => setActiveAccommodation(index)}
-              >
-                <div className={`p-6 rounded-2xl border-2 transition-all duration-300 ${
-                  activeAccommodation === index 
-                    ? 'border-[#FFD9A0] bg-gradient-to-r from-[#FFD9A0]/10 to-[#CBAACB]/10 shadow-lg' 
-                    : 'border-[#A8DADC]/30 bg-white/50 hover:border-[#A8DADC]/50'
-                }`}>
-                  <h3 className="text-2xl font-playfair font-bold text-[#264653] mb-3">
-                    {accommodation.name}
-                  </h3>
-                  <p className="text-[#264653]/70 mb-4 leading-relaxed">
-                    {accommodation.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {accommodation.features.map((feature, featureIndex) => (
-                      <span
-                        key={featureIndex}
-                        className="px-3 py-1 bg-[#A8DADC]/20 text-[#264653] text-sm rounded-full border border-[#A8DADC]/30"
-                      >
-                        {feature}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Right side - Active accommodation image */}
+        {/* Mobile-first layout with image above on mobile */}
+        <div className="space-y-8 mb-16">
+          {/* Mobile image display - shows above options on mobile */}
           <motion.div
             key={activeAccommodation}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="relative"
+            className="relative lg:hidden"
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src={accommodations[activeAccommodation].image}
                 alt={accommodations[activeAccommodation].name}
                 width={600}
-                height={500}
-                className="object-cover w-full h-[500px]"
+                height={400}
+                className="object-cover w-full h-[400px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/30 via-transparent to-[#FFD9A0]/10" />
               
+              {/* Image title overlay for mobile */}
+              <div className="absolute bottom-4 left-4 right-4">
+                <h3 className="text-xl font-playfair font-bold text-white mb-2">
+                  {accommodations[activeAccommodation].name}
+                </h3>
+              </div>
+              
               {/* Floating elements */}
               <div className="absolute top-6 right-6 w-6 h-6 bg-[#FFD9A0]/60 rounded-full animate-pulse" />
-              <div className="absolute bottom-6 left-6 w-4 h-4 bg-[#CBAACB]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+              <div className="absolute bottom-6 right-6 w-4 h-4 bg-[#CBAACB]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
             </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-[#FFD9A0]/30 rounded-full" />
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-[#CBAACB]/30 transform rotate-45" />
           </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Accommodation selector */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-4 lg:space-y-6"
+            >
+              {/* Mobile instruction text */}
+              <p className="text-[#264653]/60 text-sm mb-4 lg:hidden">
+                Klikni na možnost níže pro zobrazení obrázku výše
+              </p>
+              
+              {accommodations.map((accommodation, index) => (
+                <div
+                  key={index}
+                  className={`cursor-pointer transition-all duration-300 ${
+                    activeAccommodation === index ? 'scale-105' : 'hover:scale-102'
+                  }`}
+                  onClick={() => setActiveAccommodation(index)}
+                >
+                  <div className={`p-4 lg:p-6 rounded-2xl border-2 transition-all duration-300 ${
+                    activeAccommodation === index 
+                      ? 'border-[#FFD9A0] bg-gradient-to-r from-[#FFD9A0]/10 to-[#CBAACB]/10 shadow-lg' 
+                      : 'border-[#A8DADC]/30 bg-white/50 hover:border-[#A8DADC]/50'
+                  }`}>
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-xl lg:text-2xl font-playfair font-bold text-[#264653]">
+                        {accommodation.name}
+                      </h3>
+                      {/* Active indicator for mobile */}
+                      {activeAccommodation === index && (
+                        <div className="w-3 h-3 bg-[#FFD9A0] rounded-full animate-pulse lg:hidden" />
+                      )}
+                    </div>
+                    <p className="text-[#264653]/70 mb-4 leading-relaxed text-sm lg:text-base">
+                      {accommodation.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {accommodation.features.map((feature, featureIndex) => (
+                        <span
+                          key={featureIndex}
+                          className="px-2 lg:px-3 py-1 bg-[#A8DADC]/20 text-[#264653] text-xs lg:text-sm rounded-full border border-[#A8DADC]/30"
+                        >
+                          {feature}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+
+            {/* Right side - Desktop image display */}
+            <motion.div
+              key={activeAccommodation}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src={accommodations[activeAccommodation].image}
+                  alt={accommodations[activeAccommodation].name}
+                  width={600}
+                  height={500}
+                  className="object-cover w-full h-[500px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/30 via-transparent to-[#FFD9A0]/10" />
+                
+                {/* Floating elements */}
+                <div className="absolute top-6 right-6 w-6 h-6 bg-[#FFD9A0]/60 rounded-full animate-pulse" />
+                <div className="absolute bottom-6 left-6 w-4 h-4 bg-[#CBAACB]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+              </div>
+
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-[#FFD9A0]/30 rounded-full" />
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-[#CBAACB]/30 transform rotate-45" />
+            </motion.div>
+          </div>
         </div>
 
         {/* Sacred spaces description */}

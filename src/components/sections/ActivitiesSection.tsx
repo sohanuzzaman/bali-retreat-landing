@@ -16,7 +16,7 @@ const activities = [
   {
     title: 'Rituály s Kakaem',
     description: 'Posvátné ceremonie s ceremonijním kakaem pro otevření srdce a propojení s ženskou energií',
-    image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/cacao.jpeg',
     icon: Coffee
   },
   {
@@ -28,7 +28,7 @@ const activities = [
   {
     title: 'Očistné Rituály',
     description: 'Tradiční balijské očistné ceremonie u posvátných pramenů pro duchovní obnovu',
-    image: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/Očistné Rituály.jpeg',
     icon: Droplets
   },
   {
@@ -79,7 +79,11 @@ const ActivitiesSection: React.FC = () => {
                     src={activity.image}
                     alt={activity.title}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    className={`${
+                      activity.title === 'Očistné Rituály' 
+                        ? 'object-cover object-top' 
+                        : 'object-cover'
+                    } group-hover:scale-110 transition-transform duration-500`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D2C36]/60 to-transparent" />
                   <div className="absolute bottom-4 left-4">

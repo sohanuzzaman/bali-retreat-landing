@@ -128,42 +128,7 @@ const DivineFeminineSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Sacred promise section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
-        >
-          <div className="bg-gradient-to-r from-[#264653]/90 to-[#264653]/80 rounded-3xl p-12 text-center relative overflow-hidden">
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full"
-                   style={{
-                     backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFD9A0' fill-opacity='0.3'%3E%3Cpath d='M30 30l15-15v30l-15-15zm-15 0l15 15v-30l-15 15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-                     backgroundSize: '60px 60px'
-                   }} />
-            </div>
 
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
-                Naše <span className="text-[#FFD9A0]">Posvátná</span> Přísaha
-              </h3>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                Slibujeme ti, že se z tohoto retreatu vrátíš jako jiná žena. Silnější, moudřejší, 
-                více spojená se svou pravou podstatou. Pokud po 10 dnech necítíš hlubokou transformaci, 
-                vrátíme ti celou investici.
-              </p>
-              
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-16 h-0.5 bg-[#FFD9A0]" />
-                <div className="text-2xl">✨</div>
-                <div className="w-16 h-0.5 bg-[#FFD9A0]" />
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

@@ -53,7 +53,7 @@ const SacredInvitationSection: React.FC = () => {
                 &ldquo;V každé ženě spí bohyně. Stačí jen najít odvahu ji probudit.&rdquo;
               </blockquote>
               <p className="text-center text-[#264653]/60 mt-4 font-dancing-script text-lg">
-                - Stanka & Andrejka
+                - Stanka & Ayka
               </p>
             </div>
 

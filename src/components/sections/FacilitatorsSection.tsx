@@ -17,9 +17,9 @@ const facilitators = [
     energy: 'Mateřská, mocná, uzdravující'
   },
   {
-    name: 'Andrejka Novotná',
+    name: 'Ayka',
     title: 'Certifikovaná Lektorka Jógy & Balijská Spiritualita',
-    bio: 'Specialistka na yin přístup a ženské ladění s hlubokými znalostmi balijské spirituality. Andrejka spojuje tradiční moudrosti s moderními přístupy k osobnímu rozvoji a vytváří prostory pro autentické setkání se sebou.',
+    bio: 'Specialistka na yin přístup a ženské ladění s hlubokými znalostmi balijské spirituality. Ayka spojuje tradiční moudrosti s moderními přístupy k osobnímu rozvoji a vytváří prostory pro autentické setkání se sebou.',
     specialties: ['Yin yoga', 'Balijské rituály', 'Meditace', 'Ženské cykly'],
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     quote: 'V tichosti yin přístupu nacházíme svou největší sílu.',
@@ -152,7 +152,7 @@ const FacilitatorsSection: React.FC = () => {
                 Společně Vytváříme <span className="text-[#FFD9A0]">Posvátný Prostor</span>
               </h3>
               <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                Kombinace Stančiny mateřské síly a Andrejčiny jemné moudrosti vytváří jedinečnou alchymii, 
+                Kombinace Stančiny mateřské síly a Aykiny jemné moudrosti vytváří jedinečnou alchymii, 
                 ve které se každá žena cítí bezpečně držená a zároveň povzbuzená k růstu.
               </p>
               
@@ -169,7 +169,7 @@ const FacilitatorsSection: React.FC = () => {
                     <Waves className="w-12 h-12 text-[#FFD9A0]" />
                   </div>
                   <h4 className="text-[#FFD9A0] font-semibold mb-2">Jemné Přijetí</h4>
-                  <p className="text-white/80 text-sm">Andrejčina přítomnost tě objímá v bezpečí</p>
+                  <p className="text-white/80 text-sm">Aykina přítomnost tě objímá v bezpečí</p>
                 </div>
               </div>
             </div>

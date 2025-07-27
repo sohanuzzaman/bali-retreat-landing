@@ -67,7 +67,7 @@ const FinalCTASection: React.FC = () => {
                 Tento retreat je tvou branou k tomuto životu.&rdquo;
               </p>
               <p className="text-[#FFD9A0] mt-4 font-dancing-script text-xl">
-                - Stanka & Andrejka
+                - Stanka & Ayka
               </p>
             </div>
           </div>

@@ -10,7 +10,7 @@ const facilitators = [
   {
     name: 'Stanka Karpatyová',
     title: 'Léčitelka Srdce & Mother of Empowerment',
-    bio: 'Průvodkyně ženskou silou s 13 lety zkušeností na cestě hlubokého sebepoznání, léčení a transformace. Stanka je máma, která našla svou sílu v mateřství a nyní pomáhá ostatním ženám objevit jejich autentickou podstatu.',
+    bio: 'Žena, která kráčí životem s láskou, jemností a hlubokým propojením se sebou. Máma, manželka, průvodkyně a léčitelka. Tvoří bezpečné a posvátné prostory pro ženy, které jsou připravené se zastavit a znovu se nadechnout. Léčitelka dělohy a Luny, držitelka ženské moudrosti, která skrze své dary pomáhá ženám vracet se zpět ke svému tělu, cykličnosti, intuici a tichému vnitřnímu hlasu. Její cesta je prolnutá mateřstvím, dotekem přírody, rituály, pohybem a posvátností každodennosti. V jejím poli se ženy cítí viděné, uctěné a bezpečně vedené zpět domů – k sobě, ke své vnitřní síle, k hluboké lásce a pravdě, kterou nosí uvnitř sebe.',
     specialties: ['Léčení ženského srdce', 'Rituály s kakaem', 'Empowerment coaching', 'Mateřská moudrost'],
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     quote: 'Každá žena v sobě nosí bohyni. Moje role je pomoci jí ji najít a osvobodit.',
@@ -18,8 +18,8 @@ const facilitators = [
   },
   {
     name: 'Ayka',
-    title: 'Certifikovaná Lektorka Jógy & Balijská Spiritualita',
-    bio: 'Specialistka na yin přístup a ženské ladění s hlubokými znalostmi balijské spirituality. Ayka spojuje tradiční moudrosti s moderními přístupy k osobnímu rozvoji a vytváří prostory pro autentické setkání se sebou.',
+    title: 'Průvodkyně energií, meditací a ženským laděním',
+    bio: 'Vede ženy zpět do těla, zpět k dechu, zpět k sobě. Certifikovaná lektorka yin jógy, čchi-kungu a meditací, která otevírá cestu k vnitřnímu klidu, síle a hlubokému propojení. Specializuje se na harmonizaci čaker, práci s energetickými dráhami (meridiány) a vytváří prostor, kde se žena může uvolnit, zpomalit a skutečně cítit. Vědomě. V hloubce. V souladu.',
     specialties: ['Yin yoga', 'Balijské rituály', 'Meditace', 'Ženské cykly'],
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
     quote: 'V tichosti yin přístupu nacházíme svou největší sílu.',

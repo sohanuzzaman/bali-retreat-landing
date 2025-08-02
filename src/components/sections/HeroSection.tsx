@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1554481924-0eecea3f21de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="/images/retreat/P 1.jpg"
           alt="Luxusní Bali retreat prostředí s tropickou přírodou"
           fill
           className="object-cover"

@@ -14,7 +14,7 @@ const InvestmentSection: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-08-31T23:59:59');
+    const targetDate = new Date('2025-09-30T23:59:59');
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -46,9 +46,6 @@ const InvestmentSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#264653] mb-6">
             Investice do Tvé <span className="text-[#FFD9A0] font-dancing-script">Transformace</span>
           </h2>
-          <p className="text-xl text-[#264653]/80 max-w-3xl mx-auto leading-relaxed">
-            Kolik stojí 10 dní, které změní celý tvůj život? Méně, než si myslíš.
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
@@ -74,7 +71,7 @@ const InvestmentSection: React.FC = () => {
                   <h3 className="text-3xl font-playfair font-bold text-[#264653] mb-2">
                     Posvátná Investice
                   </h3>
-                  <p className="text-[#264653]/70">Do 31. srpna 2025</p>
+                  <p className="text-[#264653]/70">Do 30. září 2025</p>
                 </div>
 
                 <div className="text-center mb-8">
@@ -83,6 +80,11 @@ const InvestmentSection: React.FC = () => {
                   <div className="flex items-center justify-center space-x-2 text-[#264653] font-semibold mt-2">
                     <Sparkles className="w-4 h-4 text-[#FFD9A0]" />
                     <span>Ušetříš 333 €</span>
+                  </div>
+                  <div className="mt-4 text-sm text-[#264653]/80">
+                    <p><strong>Platební plán:</strong></p>
+                    <p>Rezervační depozit: 666 €</p>
+                    <p>Pak 2 platby po 1,500 €</p>
                   </div>
                 </div>
 

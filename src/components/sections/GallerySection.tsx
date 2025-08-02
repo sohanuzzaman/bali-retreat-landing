@@ -22,12 +22,12 @@ const galleryImages = [
     category: 'Ubytování'
   },
   {
-    src: 'https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    src: '/images/retreat/P 2.jpg',
     alt: 'Očistný rituál u posvátného pramene',
     category: 'Rituály'
   },
   {
-    src: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    src: '/images/retreat/P3.jpg',
     alt: 'Intuitivní tanec pod hvězdami',
     category: 'Tanec'
   },
@@ -37,23 +37,18 @@ const galleryImages = [
     category: 'Výlety'
   },
   {
-    src: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Relaxační masáž',
-    category: 'Wellness'
-  },
-  {
     src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     alt: 'Společné jídlo v zahradě',
     category: 'Stravování'
   },
   {
-    src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    src: '/images/retreat/P4.jpg',
     alt: 'Nekonečný bazén s výhledem na oceán',
     category: 'Ubytování'
   }
 ];
 
-const categories = ['Všechny', 'Rituály', 'Yoga', 'Ubytování', 'Tanec', 'Výlety', 'Wellness', 'Stravování'];
+const categories = ['Všechny', 'Rituály', 'Yoga', 'Ubytování', 'Tanec', 'Výlety', 'Stravování'];
 
 const GallerySection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('Všechny');

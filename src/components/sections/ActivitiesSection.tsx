@@ -8,8 +8,8 @@ import { Flower2, Coffee, Music, Droplets, Sparkles, Fish } from 'lucide-react';
 
 const activities = [
   {
-    title: 'Yin Yoga & Meditace',
-    description: 'Jemné protažení a hluboká relaxace pro uvolnění napětí a spojení s vnitřní moudrostí',
+    title: 'Yin Yoga & Čchi-kung',
+    description: 'Jemné protažení a hluboká relaxace pro uvolnění napětí, harmonizaci čaker a meridiánů a naladění se na vlastní vnitřní moudrost.',
     image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
     icon: Flower2
   },

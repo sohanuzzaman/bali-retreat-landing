@@ -23,12 +23,12 @@ const faqs = [
   },
   {
     question: 'Jaké jsou podmínky zrušení rezervace?',
-    answer: 'Rezervaci můžeš zrušit do 60 dní před začátkem retreatu s plnou refundací. Mezi 60-30 dny vracíme 50% částky. Méně než 30 dní před retreatom je možné převést rezervaci na jinou osobu.',
+    answer: 'Rezervační depozit ve výši 666 EUR je nevratný. Při zrušení 60–30 dní před začátkem retreatu vracíme 50 % z celkové částky (bez depozitu); méně než 30 dní před retreatem je možné převést rezervaci na jinou osobu.',
     category: 'Rezervace'
   },
   {
     question: 'Budu mít čas na odpočinek a soukromí?',
-    answer: 'Rozhodně! Program je navržen s ohledem na potřebu odpočinku. Každý den máš několik hodin volného času na relaxaci, osobní reflexi nebo jen tak na nic. Tvůj pokoj je tvým soukromým útočištěm.',
+    answer: 'Rozhodně! Program je navržen s ohledem na potřebu odpočinku. Každý den máš několik hodin volného času na relaxaci, osobní reflexi nebo jen tak na nic.',
     category: 'Program'
   },
   {

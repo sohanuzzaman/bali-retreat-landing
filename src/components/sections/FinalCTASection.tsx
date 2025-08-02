@@ -128,7 +128,7 @@ const FinalCTASection: React.FC = () => {
               <div className="flex items-center justify-center space-x-2">
                 <Lock className="w-4 h-4 text-white/60" />
                 <p className="text-white/60 text-sm">
-                  Bezpečná rezervace • Early Bird sleva do 31. srpna • Pouze 8 míst zbývá
+                  Bezpečná rezervace • Early Bird sleva do 30. září • Pouze 8 míst zbývá
                 </p>
               </div>
             </div>

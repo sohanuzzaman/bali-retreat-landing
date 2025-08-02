@@ -77,7 +77,7 @@ const UrgencySection: React.FC = () => {
                   <Clock className="w-12 h-12 text-[#FFD9A0]" />
                 </div>
                 <h3 className="text-[#FFD9A0] font-semibold mb-2">Čas se krátí</h3>
-                <p className="text-white/80 text-sm">Early Bird sleva končí 31. srpna</p>
+                <p className="text-white/80 text-sm">Early Bird sleva končí 30. září</p>
               </div>
               <div className="text-center">
                 <div className="flex justify-center mb-4">

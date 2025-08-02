@@ -1,35 +1,11 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../ui';
-import { Building, Flower2, Sparkles } from 'lucide-react';
-
-const accommodations = [
-  {
-    name: 'Posvátný Chrám Klidu',
-    description: 'Luxusní vila s výhledem na rýžová pole, kde se každé ráno probudíš za zpěvu ptáků.',
-    features: ['Soukromá koupelna', 'Terasa s výhledem', 'Klimatizace', 'Minibar'],
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-  },
-  {
-    name: 'Zahrada Bohyně',
-    description: 'Romantické pokoje obklopené tropickou zahradou, ideální pro hlubokou meditaci.',
-    features: ['Zahradní terasa', 'Venkovní sprcha', 'Yoga prostor', 'Přírodní materiály'],
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-  },
-  {
-    name: 'Lemurijský Palác',
-    description: 'Nejluxusnější apartmány s nekonečným bazénem a výhledem na oceán.',
-    features: ['Infinity pool', 'Výhled na oceán', 'Spa koupelna', 'Butlerova služba'],
-    image: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-  }
-];
+import { Building, Flower2, Sparkles, TreePine, Droplets, Waves, Heart } from 'lucide-react';
 
 const AccommodationSection: React.FC = () => {
-  const [activeAccommodation, setActiveAccommodation] = useState(0);
-
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-[#CBAACB]/10">
       {/* Mystical background elements */}
@@ -55,122 +31,151 @@ const AccommodationSection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Mobile-first layout with image above on mobile */}
-        <div className="space-y-8 mb-16">
-          {/* Mobile image display - shows above options on mobile */}
-          <motion.div
-            key={activeAccommodation}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative lg:hidden"
-          >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <Image
-                src={accommodations[activeAccommodation].image}
-                alt={accommodations[activeAccommodation].name}
-                width={600}
-                height={400}
-                className="object-cover w-full h-[400px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/30 via-transparent to-[#FFD9A0]/10" />
-              
-              {/* Image title overlay for mobile */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-xl font-playfair font-bold text-white mb-2">
-                  {accommodations[activeAccommodation].name}
-                </h3>
-              </div>
-              
-              {/* Floating elements */}
-              <div className="absolute top-6 right-6 w-6 h-6 bg-[#FFD9A0]/60 rounded-full animate-pulse" />
-              <div className="absolute bottom-6 right-6 w-4 h-4 bg-[#CBAACB]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left side - Accommodation selector */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="space-y-4 lg:space-y-6"
-            >
-              {/* Mobile instruction text */}
-              <p className="text-[#264653]/60 text-sm mb-4 lg:hidden">
-                Klikni na možnost níže pro zobrazení obrázku výše
+        {/* Sacred Places Overview */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-16"
+        >
+          <div className="bg-gradient-to-r from-[#FFD9A0]/20 to-[#CBAACB]/20 rounded-3xl p-8 lg:p-12 border border-[#FFD9A0]/30">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-playfair font-bold text-[#264653] mb-4">
+                Tři Posvátná Místa na <span className="text-[#FFD9A0]">Bali</span>
+              </h3>
+              <p className="text-lg text-[#264653]/80 max-w-2xl mx-auto">
+                Kde se potkává ticho, hluboký klid a luxus. Každé místo je portálem k sobě samé.
               </p>
-              
-              {accommodations.map((accommodation, index) => (
-                <div
-                  key={index}
-                  className={`cursor-pointer transition-all duration-300 ${
-                    activeAccommodation === index ? 'scale-105' : 'hover:scale-102'
-                  }`}
-                  onClick={() => setActiveAccommodation(index)}
-                >
-                  <div className={`p-4 lg:p-6 rounded-2xl border-2 transition-all duration-300 ${
-                    activeAccommodation === index 
-                      ? 'border-[#FFD9A0] bg-gradient-to-r from-[#FFD9A0]/10 to-[#CBAACB]/10 shadow-lg' 
-                      : 'border-[#A8DADC]/30 bg-white/50 hover:border-[#A8DADC]/50'
-                  }`}>
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="text-xl lg:text-2xl font-playfair font-bold text-[#264653]">
-                        {accommodation.name}
-                      </h3>
-                      {/* Active indicator for mobile */}
-                      {activeAccommodation === index && (
-                        <div className="w-3 h-3 bg-[#FFD9A0] rounded-full animate-pulse lg:hidden" />
-                      )}
-                    </div>
-                    <p className="text-[#264653]/70 mb-4 leading-relaxed text-sm lg:text-base">
-                      {accommodation.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {accommodation.features.map((feature, featureIndex) => (
-                        <span
-                          key={featureIndex}
-                          className="px-2 lg:px-3 py-1 bg-[#A8DADC]/20 text-[#264653] text-xs lg:text-sm rounded-full border border-[#A8DADC]/30"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
+            </div>
 
-            {/* Right side - Desktop image display */}
-            <motion.div
-              key={activeAccommodation}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="relative hidden lg:block"
-            >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src={accommodations[activeAccommodation].image}
-                  alt={accommodations[activeAccommodation].name}
-                  width={600}
-                  height={500}
-                  className="object-cover w-full h-[500px]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/30 via-transparent to-[#FFD9A0]/10" />
-                
-                {/* Floating elements */}
-                <div className="absolute top-6 right-6 w-6 h-6 bg-[#FFD9A0]/60 rounded-full animate-pulse" />
-                <div className="absolute bottom-6 left-6 w-4 h-4 bg-[#CBAACB]/60 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Ubud */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#A8DADC]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-[#2AB8A6]/20 rounded-full mb-6 mx-auto">
+                  <TreePine className="w-8 h-8 text-[#2AB8A6]" />
+                </div>
+                <h4 className="text-xl font-playfair font-bold text-[#264653] mb-3 text-center">
+                  Ubud – Posvátný Chrám Klidu
+                </h4>
+                <div className="space-y-3 text-[#264653]/80">
+                  <p className="text-sm leading-relaxed">
+                    V srdci Bali, mezi rýžovými poli a tropickou přírodou.
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    Místo, kde rána začínají zpěvem ptáků a dnem tě provází jemnost, výživa a spojení se sebou.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* North Bali */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#A8DADC]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-[#A8DADC]/20 rounded-full mb-6 mx-auto">
+                  <Droplets className="w-8 h-8 text-[#A8DADC]" />
+                </div>
+                <h4 className="text-xl font-playfair font-bold text-[#264653] mb-3 text-center">
+                  Sever Bali – Zahrada Bohyně
+                </h4>
+                <div className="space-y-3 text-[#264653]/80">
+                  <p className="text-sm leading-relaxed">
+                    V srdci vodopádů, kde je příroda nejdivočejší a nejčistší.
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    Romantické a ženské prostory obklopené tropickou zahradou – ideální pro hluboký klid a vnitřní léčení.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Uluwatu */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-[#A8DADC]/30 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-[#CBAACB]/20 rounded-full mb-6 mx-auto">
+                  <Waves className="w-8 h-8 text-[#CBAACB]" />
+                </div>
+                <h4 className="text-xl font-playfair font-bold text-[#264653] mb-3 text-center">
+                  Uluwatu – Lemurijský Palác
+                </h4>
+                <div className="space-y-3 text-[#264653]/80">
+                  <p className="text-sm leading-relaxed">
+                    Tam, kde se oceán setkává s nebem.
+                  </p>
+                  <p className="text-sm leading-relaxed">
+                    Místo silné mořské energie, ženské moudrosti a jasnosti. Pro bohyně, které si dopřávají jen to nejčistší a nejkrásnější.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Sacred Invitation */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-16"
+        >
+          <div className="bg-gradient-to-br from-[#264653]/95 to-[#264653]/90 rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden">
+            {/* Background effects */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full"
+                   style={{
+                     backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255, 217, 160, 0.3) 0%, transparent 50%),
+                                      radial-gradient(circle at 70% 70%, rgba(203, 186, 203, 0.3) 0%, transparent 50%)`,
+                     backgroundSize: '200px 200px'
+                   }} />
+            </div>
+
+            <div className="relative z-10">
+              <div className="flex items-center justify-center w-20 h-20 bg-[#FFD9A0]/20 rounded-full mb-8 mx-auto">
+                <Heart className="w-10 h-10 text-[#FFD9A0]" />
+              </div>
+              
+              <h3 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-8">
+                Jsi <span className="text-[#FFD9A0]">Pozvaná</span>
+              </h3>
+              
+              <div className="space-y-6 text-white/90 max-w-3xl mx-auto">
+                <p className="text-lg leading-relaxed">
+                  Na cestu zpět k sobě.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Do ženského kruhu, kde tvoje duše ožije.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Do bezpečí, kde se můžeš ponořit do své hloubky, ticha a svobody.
+                </p>
               </div>
 
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 border-2 border-[#FFD9A0]/30 rounded-full" />
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 border-2 border-[#CBAACB]/30 transform rotate-45" />
-            </motion.div>
+              <div className="mt-10">
+                <button 
+                  onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="px-8 py-4 bg-[#FFD9A0] text-[#264653] font-bold text-lg rounded-full hover:bg-[#FFD9A0]/90 transition-all duration-300 shadow-lg"
+                >
+                  Přijímám Pozvání
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Sacred spaces description */}
         <motion.div

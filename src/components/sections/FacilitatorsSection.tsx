@@ -12,7 +12,7 @@ const facilitators = [
     title: 'Léčitelka Srdce & Mother of Empowerment',
     bio: 'Žena, která kráčí životem s láskou, jemností a hlubokým propojením se sebou. Máma, manželka, průvodkyně a léčitelka. Tvoří bezpečné a posvátné prostory pro ženy, které jsou připravené se zastavit a znovu se nadechnout. Léčitelka dělohy a Luny, držitelka ženské moudrosti, která skrze své dary pomáhá ženám vracet se zpět ke svému tělu, cykličnosti, intuici a tichému vnitřnímu hlasu. Její cesta je prolnutá mateřstvím, dotekem přírody, rituály, pohybem a posvátností každodennosti. V jejím poli se ženy cítí viděné, uctěné a bezpečně vedené zpět domů – k sobě, ke své vnitřní síle, k hluboké lásce a pravdě, kterou nosí uvnitř sebe.',
     specialties: ['Léčení ženského srdce', 'Rituály s kakaem', 'Empowerment coaching', 'Mateřská moudrost'],
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: '/images/stana.jpeg',
     quote: 'Každá žena v sobě nosí bohyni. Moje role je pomoci jí ji najít a osvobodit.',
     energy: 'Mateřská, mocná, uzdravující'
   },
@@ -21,7 +21,7 @@ const facilitators = [
     title: 'Průvodkyně energií, meditací a ženským laděním',
     bio: 'Vede ženy zpět do těla, zpět k dechu, zpět k sobě. Certifikovaná lektorka yin jógy, čchi-kungu a meditací, která otevírá cestu k vnitřnímu klidu, síle a hlubokému propojení. Specializuje se na harmonizaci čaker, práci s energetickými dráhami (meridiány) a vytváří prostor, kde se žena může uvolnit, zpomalit a skutečně cítit. Vědomě. V hloubce. V souladu.',
     specialties: ['Yin yoga', 'Balijské rituály', 'Meditace', 'Ženské cykly'],
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80',
+    image: '/images/Ayka.jpeg',
     quote: 'V tichosti yin přístupu nacházíme svou největší sílu.',
     energy: 'Jemná, hluboká, intuitivní'
   }
@@ -72,7 +72,7 @@ const FacilitatorsSection: React.FC = () => {
                       src={facilitator.image}
                       alt={facilitator.name}
                       fill
-                      className="object-cover"
+                      className={`object-cover ${facilitator.name === 'Stanka Karpatyová' ? 'object-top' : 'object-center'}`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/40 via-transparent to-[#FFD9A0]/20" />
                   </div>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Container } from '../ui';
-import { Info, Gem, Target, Building, Flower2, Leaf, Coffee, Droplets, Sparkles, Fish, Bus, Users, Gift, Phone, Camera, Zap } from 'lucide-react';
+import { Info, Gem, Target, Building, Flower2, Leaf, Coffee, Droplets, Sparkles, Bus, Users, Gift, Zap } from 'lucide-react';
 
 const InvestmentSection: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -186,12 +186,9 @@ const InvestmentSection: React.FC = () => {
               { icon: Coffee, title: 'Ceremonie s kakaem', desc: 'Posvátné rituály otevření srdce' },
               { icon: Droplets, title: 'Očistné rituály', desc: 'Tradiční balijské purifikace' },
               { icon: Sparkles, title: '2 balijské masáže', desc: 'Hluboká relaxace a uzdravení' },
-              { icon: Fish, title: 'Výlet k delfínům', desc: 'Magické setkání s mořskými bytostmi' },
               { icon: Bus, title: 'Všechny transfery', desc: 'Pohodlná doprava po celou dobu' },
               { icon: Users, title: 'Online komunita', desc: 'Přístup od března 2026' },
-              { icon: Gift, title: 'Překvapení a dárky', desc: 'Speciální pozornosti pro každou' },
-              { icon: Phone, title: 'Podpora 24/7', desc: 'Facilitátorky k dispozici kdykoliv' },
-              { icon: Camera, title: 'Profesionální fotky', desc: 'Vzpomínky na celý život' }
+              { icon: Gift, title: 'Překvapení a dárky', desc: 'Speciální pozornosti pro každou' }
             ].map((item, index) => (
               <div key={index} className="flex items-start space-x-3 p-4 bg-white/50 rounded-2xl border border-[#A8DADC]/20">
                 <item.icon className="w-6 h-6 text-[#FFD9A0] mt-1 flex-shrink-0" />

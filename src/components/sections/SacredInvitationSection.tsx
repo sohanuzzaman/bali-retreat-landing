@@ -80,7 +80,7 @@ const SacredInvitationSection: React.FC = () => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                src="/images/retreat/P 1.jpg"
                 alt="Žena v meditaci při východu slunce na Bali"
                 width={600}
                 height={800}

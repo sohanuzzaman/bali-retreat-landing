@@ -124,58 +124,6 @@ const TestimonialsSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Video testimonial section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-r from-[#264653]/90 to-[#264653]/80 rounded-3xl p-12 text-center relative overflow-hidden"
-        >
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-full h-full"
-                 style={{
-                   backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255, 217, 160, 0.3) 0%, transparent 50%),
-                                    radial-gradient(circle at 75% 75%, rgba(168, 218, 220, 0.3) 0%, transparent 50%)`,
-                   backgroundSize: '150px 150px'
-                 }} />
-          </div>
-
-          <div className="relative z-10">
-            <h3 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
-              Chceš slyšet <span className="text-[#FFD9A0]">více příběhů?</span>
-            </h3>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-8">
-              Máme desítky video testimonials od žen, které prošly transformací. 
-              Po rezervaci ti pošleme přístup k naší privátní galerii příběhů.
-            </p>
-            
-            <div className="flex items-center justify-center space-x-8 mb-8">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#FFD9A0]">47</div>
-                <p className="text-white/80 text-sm">Transformovaných žen</p>
-              </div>
-              <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#FFD9A0]">98%</div>
-                <p className="text-white/80 text-sm">Doporučuje přátelům</p>
-              </div>
-              <div className="w-px h-12 bg-white/30" />
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#FFD9A0]">100%</div>
-                <p className="text-white/80 text-sm">Cítí se změněné</p>
-              </div>
-            </div>
-
-            <button 
-              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              className="px-8 py-4 bg-[#FFD9A0] text-[#264653] font-semibold rounded-full hover:bg-[#FFD9A0]/90 transition-all duration-300 shadow-lg"
-            >
-              Chci být další příběh
-            </button>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

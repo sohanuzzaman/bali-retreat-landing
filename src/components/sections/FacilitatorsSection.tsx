@@ -20,7 +20,7 @@ const facilitators = [
     name: 'Ayka',
     title: 'Průvodkyně energií, meditací a ženským laděním',
     bio: 'Vede ženy zpět do těla, zpět k dechu, zpět k sobě. Certifikovaná lektorka yin jógy, čchi-kungu a meditací, která otevírá cestu k vnitřnímu klidu, síle a hlubokému propojení. Specializuje se na harmonizaci čaker, práci s energetickými dráhami (meridiány) a vytváří prostor, kde se žena může uvolnit, zpomalit a skutečně cítit. Vědomě. V hloubce. V souladu.',
-    specialties: ['Yin yoga', 'Balijské rituály', 'Meditace', 'Ženské cykly'],
+    specialties: ['Yin yoga', 'Meditace', 'Ženské cykly'],
     image: '/images/Ayka.jpeg',
     quote: 'V tichosti yin přístupu nacházíme svou největší sílu.',
     energy: 'Jemná, hluboká, intuitivní'

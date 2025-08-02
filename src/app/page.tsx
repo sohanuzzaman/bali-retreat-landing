@@ -7,7 +7,6 @@ import TargetAudienceSection from '@/components/sections/TargetAudienceSection';
 import FacilitatorsSection from '@/components/sections/FacilitatorsSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import InvestmentSection from '@/components/sections/InvestmentSection';
-import UrgencySection from '@/components/sections/UrgencySection';
 import BookingSection from '@/components/sections/BookingSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
@@ -25,7 +24,6 @@ export default function Home() {
       <FacilitatorsSection />
       <TestimonialsSection />
       <InvestmentSection />
-      <UrgencySection />
       <BookingSection />
       <FAQSection />
       <FinalCTASection />

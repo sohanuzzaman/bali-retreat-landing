@@ -4,13 +4,13 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container, Card } from '../ui';
-import { Flower2, Coffee, Music, Droplets, Sparkles, Fish } from 'lucide-react';
+import { Flower2, Coffee, Music, Droplets, Sparkles } from 'lucide-react';
 
 const activities = [
   {
     title: 'Yin Yoga & Čchi-kung',
     description: 'Jemné protažení a hluboká relaxace pro uvolnění napětí, harmonizaci čaker a meridiánů a naladění se na vlastní vnitřní moudrost.',
-    image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/retreat/P 1.jpg',
     icon: Flower2
   },
   {
@@ -22,13 +22,13 @@ const activities = [
   {
     title: 'Intuitivní Tanec',
     description: 'Svobodný pohyb pro uvolnění emocí a vyjádření autentického já prostřednictvím těla',
-    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+    image: '/images/retreat/P 2.jpg',
     icon: Music
   },
   {
     title: 'Očistné Rituály',
     description: 'Tradiční balijské očistné ceremonie u posvátných pramenů pro duchovní obnovu',
-    image: '/images/Očistné Rituály.jpeg',
+    image: '/images/retreat/P3.jpg',
     icon: Droplets
   },
   {
@@ -38,10 +38,10 @@ const activities = [
     icon: Sparkles
   },
   {
-    title: 'Výlety k Delfínům',
-    description: 'Magické setkání s delfíny v jejich přirozeném prostředí - nezapomenutelný zážitek',
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-    icon: Fish
+    title: 'Tři Posvátná Místa',
+    description: 'Návštěva třech nejposvátějších chrámů Bali pro duchovní obnovu a spojení s místní kulturou',
+    image: '/images/retreat/P4.jpg',
+    icon: Sparkles
   }
 ];
 

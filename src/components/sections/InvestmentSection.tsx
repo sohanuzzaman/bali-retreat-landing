@@ -115,7 +115,7 @@ const InvestmentSection: React.FC = () => {
                   onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                   className="w-full py-4 bg-[#FFD9A0] text-[#264653] font-bold text-lg rounded-2xl hover:bg-[#FFD9A0]/90 transition-all duration-300 shadow-lg"
                 >
-                  Rezervovat za Early Bird cenu
+                  Rezervovat za Early Bird cenu (666 € deposit)
                 </button>
               </div>
             </div>

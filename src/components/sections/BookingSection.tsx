@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container, Card } from '../ui';
 import { Lock, Clock } from 'lucide-react';
+import PaymentSelector from '../payment/PaymentSelector';
+import { formatPrice, DEPOSIT_AMOUNT, calculateRemainingAmount, EARLY_BIRD_TOTAL, STANDARD_TOTAL } from '@/lib/payments';
 
 const BookingSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -13,11 +15,14 @@ const BookingSection: React.FC = () => {
     phone: '',
     consent: false
   });
+  const [currentStep, setCurrentStep] = useState<'form' | 'payment' | 'success'>('form');
+  const [isEarlyBird] = useState(true); // Could be determined by current date
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    if (formData.name && formData.email && formData.phone && formData.consent) {
+      setCurrentStep('payment');
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -27,6 +32,13 @@ const BookingSection: React.FC = () => {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
+
+  const handlePaymentSuccess = () => {
+    setCurrentStep('success');
+  };
+
+  const totalAmount = isEarlyBird ? EARLY_BIRD_TOTAL : STANDARD_TOTAL;
+  const remainingAmount = calculateRemainingAmount(totalAmount);
 
   return (
     <section id="booking" className="py-20 relative overflow-hidden">
@@ -71,11 +83,20 @@ const BookingSection: React.FC = () => {
                       <div className="text-white/60 line-through text-lg">3,999 €</div>
                     </div>
                   </div>
-                  <div className="bg-[#D4A95C]/20 rounded-lg p-3">
+                  <div className="bg-[#D4A95C]/20 rounded-lg p-3 mb-4">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-[#FFD9A0]" />
                       <p className="text-white text-sm font-semibold">Ušetříš 333 € při rezervaci do konce srpna!</p>
                     </div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <p className="text-white/90 text-sm">
+                      <strong>Deposit dnes:</strong> {formatPrice(DEPOSIT_AMOUNT)} | 
+                      <strong> Zbytek:</strong> {formatPrice(remainingAmount)} 
+                      <span className="text-xs block mt-1 text-white/70">
+                        (splatný 60 dní před retreatum)
+                      </span>
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -83,12 +104,21 @@ const BookingSection: React.FC = () => {
               {/* Standard */}
               <Card className="bg-white/10 border border-white/20 backdrop-blur-sm">
                 <div className="p-6">
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-3">
                     <div>
                       <h3 className="text-xl font-cinzel font-semibold text-white">Standardní cena</h3>
                       <p className="text-white/60 text-sm">Od 1. září 2025</p>
                     </div>
                     <div className="text-2xl font-bold text-white">3,999 €</div>
+                  </div>
+                  <div className="bg-white/10 rounded-lg p-3">
+                    <p className="text-white/90 text-sm">
+                      <strong>Deposit dnes:</strong> {formatPrice(DEPOSIT_AMOUNT)} | 
+                      <strong> Zbytek:</strong> {formatPrice(calculateRemainingAmount(STANDARD_TOTAL))}
+                      <span className="text-xs block mt-1 text-white/70">
+                        (splatný 60 dní před retreatum)
+                      </span>
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -119,7 +149,7 @@ const BookingSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right side - Booking Form */}
+          {/* Right side - Booking Form/Payment */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -128,96 +158,140 @@ const BookingSection: React.FC = () => {
           >
             <Card className="bg-white/95 backdrop-blur-sm border border-white/50">
               <div className="p-8">
-                <h3 className="text-2xl font-playfair font-bold text-[#0D2C36] mb-6 text-center">
-                  Rezervuj si své místo
-                </h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Jméno a příjmení *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="Zadej své jméno"
+                {currentStep === 'form' && (
+                  <>
+                    <h3 className="text-2xl font-playfair font-bold text-[#0D2C36] mb-6 text-center">
+                      Rezervuj si své místo
+                    </h3>
+                    
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
+                          Jméno a příjmení *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
+                          placeholder="Zadej své jméno"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
+                          Email *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
+                          placeholder="tvuj@email.cz"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
+                          Telefon *
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          required
+                          className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
+                          placeholder="+420 123 456 789"
+                        />
+                      </div>
+
+                      <div className="flex items-start">
+                        <input
+                          type="checkbox"
+                          name="consent"
+                          checked={formData.consent}
+                          onChange={handleInputChange}
+                          required
+                          className="mt-1 mr-3 w-4 h-4 text-[#2AB8A6] border-[#D5C7E8] rounded focus:ring-[#2AB8A6]"
+                        />
+                        <label className="text-sm text-[#0D2C36]/80 font-montserrat">
+                          Souhlasím se zpracováním osobních údajů a chci být kontaktována ohledně retreatu. 
+                          Vaše údaje jsou u nás v bezpečí.
+                        </label>
+                      </div>
+
+                      <button
+                        type="submit"
+                        className="w-full py-4 bg-[#D4A95C] text-[#0D2C36] font-montserrat font-bold text-lg rounded-lg hover:bg-[#D4A95C]/90 transition-colors duration-300 shadow-lg"
+                      >
+                        Pokračovat k platbě →
+                      </button>
+                    </form>
+
+                    <div className="mt-6 text-center">
+                      <p className="text-[#0D2C36]/60 text-sm font-montserrat mb-4">
+                        Nejsi ještě připravená rezervovat?
+                      </p>
+                      <button className="text-[#2AB8A6] font-montserrat font-semibold hover:underline">
+                        Připoj se k přípravné komunitě
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {currentStep === 'payment' && (
+                  <>
+                    <div className="flex items-center justify-between mb-6">
+                      <h3 className="text-2xl font-playfair font-bold text-[#0D2C36]">
+                        Platba - Deposit
+                      </h3>
+                      <button
+                        onClick={() => setCurrentStep('form')}
+                        className="text-[#2AB8A6] hover:underline text-sm font-medium"
+                      >
+                        ← Zpět
+                      </button>
+                    </div>
+                    <PaymentSelector
+                      customerData={formData}
+                      isEarlyBird={isEarlyBird}
+                      onPaymentSuccess={handlePaymentSuccess}
                     />
-                  </div>
+                  </>
+                )}
 
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="tvuj@email.cz"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Telefon *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="+420 123 456 789"
-                    />
-                  </div>
-
-                  <div className="flex items-start">
-                    <input
-                      type="checkbox"
-                      name="consent"
-                      checked={formData.consent}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1 mr-3 w-4 h-4 text-[#2AB8A6] border-[#D5C7E8] rounded focus:ring-[#2AB8A6]"
-                    />
-                    <label className="text-sm text-[#0D2C36]/80 font-montserrat">
-                      Souhlasím se zpracováním osobních údajů a chci být kontaktována ohledně retreatu. 
-                      Vaše údaje jsou u nás v bezpečí.
-                    </label>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full py-4 bg-[#D4A95C] text-[#0D2C36] font-montserrat font-bold text-lg rounded-lg hover:bg-[#D4A95C]/90 transition-colors duration-300 shadow-lg"
-                  >
-                    Rezervovat místo (Early Bird 3,666 €)
-                  </button>
-                </form>
-
-                <div className="mt-6 text-center">
-                  <p className="text-[#0D2C36]/60 text-sm font-montserrat mb-4">
-                    Nejsi ještě připravená rezervovat?
-                  </p>
-                  <button className="text-[#2AB8A6] font-montserrat font-semibold hover:underline">
-                    Připoj se k přípravné komunitě
-                  </button>
-                </div>
-
-                <div className="mt-6 bg-[#2AB8A6]/10 rounded-lg p-4 text-center">
-                  <div className="flex items-center justify-center space-x-2">
-                    <Lock className="w-4 h-4 text-[#A8DADC]" />
-                    <p className="text-[#0D2C36] text-sm font-montserrat">
-                      <strong>Bezpečná rezervace</strong> • Možnost zrušení do 60 dní před odjezdem
+                {currentStep === 'success' && (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-green-700 mb-2">Úspěšně rezervováno!</h3>
+                    <p className="text-gray-600 mb-4">
+                      Tvá platba byla úspěšně zpracována. Děkujeme za důvěru!
+                    </p>
+                    <p className="text-sm text-gray-500">
+                      Brzy obdržíš potvrzovací email s dalšími instrukcemi.
                     </p>
                   </div>
-                </div>
+                )}
+
+                {currentStep === 'form' && (
+                  <div className="mt-6 bg-[#2AB8A6]/10 rounded-lg p-4 text-center">
+                    <div className="flex items-center justify-center space-x-2">
+                      <Lock className="w-4 h-4 text-[#A8DADC]" />
+                      <p className="text-[#0D2C36] text-sm font-montserrat">
+                        <strong>Bezpečná rezervace</strong> • Deposit {formatPrice(DEPOSIT_AMOUNT)} • Možnost zrušení do 60 dní před odjezdem
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </Card>
           </motion.div>

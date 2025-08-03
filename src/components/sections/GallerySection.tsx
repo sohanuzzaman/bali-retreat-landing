@@ -7,56 +7,37 @@ import { Container } from '../ui';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Ranní meditace při východu slunce',
-    category: 'Rituály'
+    src: '/images/retreat/P5.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Yin yoga v tropické zahradě',
-    category: 'Yoga'
+    src: '/images/retreat/P6.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Luxusní ubytování s výhledem',
-    category: 'Ubytování'
+    src: '/images/retreat/P7.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: '/images/retreat/P 2.jpg',
-    alt: 'Očistný rituál u posvátného pramene',
-    category: 'Rituály'
+    src: '/images/retreat/P8.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: '/images/retreat/P3.jpg',
-    alt: 'Intuitivní tanec pod hvězdami',
-    category: 'Tanec'
+    src: '/images/retreat/P9.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Setkání s delfíny',
-    category: 'Výlety'
+    src: '/images/retreat/P10.jpg',
+    alt: 'Retreat moment'
   },
   {
-    src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    alt: 'Společné jídlo v zahradě',
-    category: 'Stravování'
-  },
-  {
-    src: '/images/retreat/P4.jpg',
-    alt: 'Nekonečný bazén s výhledem na oceán',
-    category: 'Ubytování'
+    src: '/images/retreat/P11.jpg',
+    alt: 'Retreat moment'
   }
 ];
 
-const categories = ['Všechny', 'Rituály', 'Yoga', 'Ubytování', 'Tanec', 'Výlety', 'Stravování'];
-
 const GallerySection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('Všechny');
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-
-  const filteredImages = activeCategory === 'Všechny' 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === activeCategory);
 
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white to-[#A8DADC]/10">
@@ -76,38 +57,15 @@ const GallerySection: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Category filters */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? 'bg-[#FFD9A0] text-[#264653] shadow-lg'
-                  : 'bg-white/80 text-[#264653]/70 hover:bg-[#A8DADC]/20 border border-[#A8DADC]/30'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Gallery grid */}
         <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           <AnimatePresence mode="wait">
-            {filteredImages.map((image, index) => (
+            {galleryImages.map((image, index) => (
               <motion.div
-                key={`${activeCategory}-${index}`}
+                key={index}
                 layout
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -125,11 +83,6 @@ const GallerySection: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#264653]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4 bg-[#FFD9A0]/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#264653] text-sm font-medium">
-                    {image.category}
-                  </div>
-                  
                   {/* Hover overlay */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
@@ -137,13 +90,6 @@ const GallerySection: React.FC = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
                       </svg>
                     </div>
-                  </div>
-                  
-                  {/* Image title */}
-                  <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-white font-medium text-sm leading-tight">
-                      {image.alt}
-                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -169,8 +115,8 @@ const GallerySection: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image
-                  src={filteredImages[selectedImage].src}
-                  alt={filteredImages[selectedImage].alt}
+                  src={galleryImages[selectedImage].src}
+                  alt={galleryImages[selectedImage].alt}
                   width={800}
                   height={600}
                   className="object-contain max-h-[80vh] rounded-2xl"
@@ -183,10 +129,6 @@ const GallerySection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
-                <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm rounded-2xl p-4">
-                  <p className="text-white font-medium">{filteredImages[selectedImage].alt}</p>
-                  <p className="text-[#FFD9A0] text-sm">{filteredImages[selectedImage].category}</p>
-                </div>
               </motion.div>
             </motion.div>
           )}

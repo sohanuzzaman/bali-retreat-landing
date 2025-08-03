@@ -83,8 +83,8 @@ const InvestmentSection: React.FC = () => {
                   </div>
                   <div className="mt-4 text-sm text-[#264653]/80">
                     <p><strong>Platební plán:</strong></p>
-                    <p>Rezervační depozit: 666 €</p>
-                    <p>Pak 2 platby po 1,500 €</p>
+                    <p>Deposit dnes: 666 €</p>
+                    <p>Zbytek (3,000 €) splatný 60 dní před odjezdem</p>
                   </div>
                 </div>
 
@@ -139,6 +139,11 @@ const InvestmentSection: React.FC = () => {
               <div className="text-center mb-8">
                 <div className="text-4xl font-bold text-[#264653] mb-2">3,999 €</div>
                 <p className="text-[#264653]/60">Stále skvělá hodnota</p>
+                <div className="mt-4 text-sm text-[#264653]/80">
+                  <p><strong>Platební plán:</strong></p>
+                  <p>Deposit: 666 €</p>
+                  <p>Zbytek (3,333 €) splatný 60 dní před odjezdem</p>
+                </div>
               </div>
 
               <div className="space-y-4 mb-8">

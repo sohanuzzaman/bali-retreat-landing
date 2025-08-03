@@ -1,33 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container, Card } from '../ui';
 import { Lock, Clock } from 'lucide-react';
 
 const BookingSection: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    consent: false
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.name && formData.email && formData.phone && formData.consent) {
-      // Open Stripe payment link in new tab
-      window.open('https://buy.stripe.com/fZubIT1MQ5ms1u6bVw0oM01', '_blank');
-    }
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: type === 'checkbox' ? checked : value
-    }));
+  const handleBookingClick = () => {
+    // Open Stripe payment link in new tab
+    window.open('https://buy.stripe.com/fZubIT1MQ5ms1u6bVw0oM01', '_blank');
   };
 
   return (
@@ -139,7 +121,7 @@ const BookingSection: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Right side - Booking Form */}
+          {/* Right side - Booking CTA */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -147,99 +129,45 @@ const BookingSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Card className="bg-white/95 backdrop-blur-sm border border-white/50">
-              <div className="p-8">
-                <h3 className="text-2xl font-playfair font-bold text-[#0D2C36] mb-6 text-center">
+              <div className="p-8 text-center">
+                <h3 className="text-2xl font-playfair font-bold text-[#0D2C36] mb-6">
                   Rezervuj si své místo
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Jméno a příjmení *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="Zadej své jméno"
-                    />
-                  </div>
+                <div className="mb-8">
+                  <div className="text-4xl font-bold text-[#D4A95C] mb-2">666 €</div>
+                  <p className="text-[#0D2C36]/80 text-lg mb-4">Deposit pro rezervaci místa</p>
+                  <p className="text-sm text-[#0D2C36]/60">
+                    Zbývající částka splatná 60 dní před retreatum
+                  </p>
+                </div>
 
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="tvuj@email.cz"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[#0D2C36] font-montserrat font-medium mb-2">
-                      Telefon *
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 border border-[#D5C7E8] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#2AB8A6] focus:border-transparent"
-                      placeholder="+420 123 456 789"
-                    />
-                  </div>
-
-                  <div className="flex items-start">
-                    <input
-                      type="checkbox"
-                      name="consent"
-                      checked={formData.consent}
-                      onChange={handleInputChange}
-                      required
-                      className="mt-1 mr-3 w-4 h-4 text-[#2AB8A6] border-[#D5C7E8] rounded focus:ring-[#2AB8A6]"
-                    />
-                    <label className="text-sm text-[#0D2C36]/80 font-montserrat">
-                      Souhlasím se zpracováním osobních údajů a chci být kontaktována ohledně retreatu. 
-                      Vaše údaje jsou u nás v bezpečí.
-                    </label>
-                  </div>
-
-                  <div className="bg-[#2AB8A6]/10 rounded-lg p-4 mb-4">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <div className="w-4 h-4 bg-[#2AB8A6] rounded-full flex items-center justify-center">
-                        <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 8 8">
-                          <circle cx="4" cy="4" r="3"/>
-                        </svg>
-                      </div>
-                      <span className="font-semibold text-[#0D2C36]">Bezpečná platba přes Stripe</span>
+                <div className="bg-[#2AB8A6]/10 rounded-lg p-4 mb-6">
+                  <div className="flex items-center justify-center space-x-2 mb-2">
+                    <div className="w-4 h-4 bg-[#2AB8A6] rounded-full flex items-center justify-center">
+                      <svg className="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 8 8">
+                        <circle cx="4" cy="4" r="3"/>
+                      </svg>
                     </div>
-                    <p className="text-sm text-[#0D2C36]/80">
-                      Po vyplnění formuláře budeš přesměrována na bezpečnou platební stránku Stripe 
-                      pro zaplacení depositu 666 €.
-                    </p>
+                    <span className="font-semibold text-[#0D2C36]">Bezpečná platba přes Stripe</span>
                   </div>
+                  <p className="text-sm text-[#0D2C36]/80">
+                    Budeš přesměrována na bezpečnou platební stránku Stripe. 
+                    Všechny osobní a platební údaje vyplníš tam.
+                  </p>
+                </div>
 
-                  <button
-                    type="submit"
-                    className="w-full py-4 bg-[#D4A95C] text-[#0D2C36] font-montserrat font-bold text-lg rounded-lg hover:bg-[#D4A95C]/90 transition-colors duration-300 shadow-lg flex items-center justify-center space-x-2"
-                  >
-                    <span>Pokračovat k platbě Stripe</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </button>
-                </form>
+                <button
+                  onClick={handleBookingClick}
+                  className="w-full py-4 bg-[#D4A95C] text-[#0D2C36] font-montserrat font-bold text-lg rounded-lg hover:bg-[#D4A95C]/90 transition-colors duration-300 shadow-lg flex items-center justify-center space-x-2 mb-6"
+                >
+                  <span>Rezervovat nyní - 666 € deposit</span>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </button>
 
-                <div className="mt-6 text-center">
+                <div className="text-center mb-6">
                   <p className="text-[#0D2C36]/60 text-sm font-montserrat mb-4">
                     Nejsi ještě připravená rezervovat?
                   </p>
@@ -248,11 +176,11 @@ const BookingSection: React.FC = () => {
                   </button>
                 </div>
 
-                <div className="mt-6 bg-[#2AB8A6]/10 rounded-lg p-4 text-center">
+                <div className="bg-[#2AB8A6]/10 rounded-lg p-4">
                   <div className="flex items-center justify-center space-x-2">
                     <Lock className="w-4 h-4 text-[#A8DADC]" />
                     <p className="text-[#0D2C36] text-sm font-montserrat">
-                      <strong>Bezpečná rezervace</strong> • Deposit 666 € • Možnost zrušení do 60 dní před odjezdem
+                      <strong>Bezpečná rezervace</strong> • Možnost zrušení do 60 dní před odjezdem
                     </p>
                   </div>
                 </div>

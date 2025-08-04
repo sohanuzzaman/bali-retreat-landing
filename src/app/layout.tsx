@@ -41,6 +41,7 @@ export default function RootLayout({
     <html lang="cs">
       <body
         className={`${playfair.variable} ${cinzel.variable} ${montserrat.variable} font-montserrat antialiased`}
+        suppressHydrationWarning={true}
       >
         {children}
       </body>

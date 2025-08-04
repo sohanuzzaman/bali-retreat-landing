@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '../ui';
@@ -31,19 +31,33 @@ const testimonials = [
 ];
 
 const TestimonialsSection: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+  const [sparkles, setSparkles] = useState<Array<{top: number, left: number, delay: number, duration: number}>>([]);
+
+  useEffect(() => {
+    setMounted(true);
+    // Generate sparkle positions only on client side
+    const newSparkles = [...Array(8)].map(() => ({
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      delay: Math.random() * 3,
+      duration: 2 + Math.random() * 2
+    }));
+    setSparkles(newSparkles);
+  }, []);
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#A8DADC]/10 to-[#CBAACB]/10">
       {/* Mystical background */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {mounted && sparkles.map((sparkle, i) => (
           <div
             key={i}
             className="absolute w-3 h-3 bg-[#FFD9A0]/20 rounded-full animate-pulse"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`
+              top: `${sparkle.top}%`,
+              left: `${sparkle.left}%`,
+              animationDelay: `${sparkle.delay}s`,
+              animationDuration: `${sparkle.duration}s`
             }}
           />
         ))}

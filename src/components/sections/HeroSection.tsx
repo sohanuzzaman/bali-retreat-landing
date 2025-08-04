@@ -27,15 +27,34 @@ const HeroSection: React.FC = () => {
     if (!video) return;
 
     if (!isPlayingReverse && video.currentTime >= video.duration - 0.1) {
-      // Reached end, start playing backwards
+      // Reached end, start playing backwards by reversing time manually
       setIsPlayingReverse(true);
-      video.playbackRate = -0.5; // Negative rate for reverse playback
-    } else if (isPlayingReverse && video.currentTime <= 0.1) {
-      // Reached beginning, start playing forwards
-      setIsPlayingReverse(false);
-      video.playbackRate = 0.5; // Positive rate for forward playback
     }
   };
+
+  // Handle the reverse playback manually
+  React.useEffect(() => {
+    if (!isPlayingReverse) return;
+    
+    const video = videoRef.current;
+    if (!video) return;
+
+    const interval = setInterval(() => {
+      if (video.currentTime <= 0.1) {
+        // Reached beginning, start playing forwards
+        setIsPlayingReverse(false);
+        video.play();
+        clearInterval(interval);
+      } else {
+        // Move backwards manually
+        video.currentTime = Math.max(0, video.currentTime - 0.033); // ~30fps backwards
+      }
+    }, 33); // ~30fps
+
+    video.pause(); // Pause the normal playback while we control it manually
+
+    return () => clearInterval(interval);
+  }, [isPlayingReverse]);
 
   const scrollToBooking = () => {
     const bookingSection = document.getElementById('booking');
@@ -52,7 +71,7 @@ const HeroSection: React.FC = () => {
       {/* Background Image Fallback */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/vlcsnap-2025-08-04-13h51m56s396.png"
+          src="/images/hero-bg.webp"
           alt="Luxusní Bali retreat prostředí s tropickou přírodou"
           fill
           className="object-cover"
@@ -73,14 +92,12 @@ const HeroSection: React.FC = () => {
             muted
             playsInline
             className="w-full h-full object-cover"
-            onLoadedData={(e) => {
-              const video = e.target as HTMLVideoElement;
-              video.playbackRate = 0.5; // 50% speed
+            onLoadedData={() => {
               setVideoLoaded(true);
             }}
             onTimeUpdate={handleVideoTimeUpdate}
             onError={() => setVideoError(true)}
-            poster="/images/vlcsnap-2025-08-04-13h51m56s396.png"
+            poster="/images/hero-bg.webp"
             preload="none"
           >
             <source src="/images/hero-bg.webm" type="video/webm" />

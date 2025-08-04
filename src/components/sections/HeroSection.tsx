@@ -1,11 +1,42 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '../ui';
 
 const HeroSection: React.FC = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [isPlayingReverse, setIsPlayingReverse] = useState(false);
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  // Load video after component mounts to improve initial page load
+  React.useEffect(() => {
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 500); // Delay video loading by 500ms
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Ping-pong loop effect
+  const handleVideoTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!isPlayingReverse && video.currentTime >= video.duration - 0.1) {
+      // Reached end, start playing backwards
+      setIsPlayingReverse(true);
+      video.playbackRate = -0.5; // Negative rate for reverse playback
+    } else if (isPlayingReverse && video.currentTime <= 0.1) {
+      // Reached beginning, start playing forwards
+      setIsPlayingReverse(false);
+      video.playbackRate = 0.5; // Positive rate for forward playback
+    }
+  };
+
   const scrollToBooking = () => {
     const bookingSection = document.getElementById('booking');
     bookingSection?.scrollIntoView({ behavior: 'smooth' });
@@ -18,10 +49,10 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image Fallback */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/retreat/P 1.jpg"
+          src="/images/vlcsnap-2025-08-04-13h51m56s396.png"
           alt="Luxusní Bali retreat prostředí s tropickou přírodou"
           fill
           className="object-cover"
@@ -33,8 +64,37 @@ const HeroSection: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#264653]/60 via-transparent to-[#A8DADC]/30" />
       </div>
 
+      {/* Video Background */}
+      {!videoError && shouldLoadVideo && (
+        <div className={`absolute inset-0 z-5 transition-opacity duration-1000 ${videoLoaded ? 'opacity-100' : 'opacity-0'}`}>
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            onLoadedData={(e) => {
+              const video = e.target as HTMLVideoElement;
+              video.playbackRate = 0.5; // 50% speed
+              setVideoLoaded(true);
+            }}
+            onTimeUpdate={handleVideoTimeUpdate}
+            onError={() => setVideoError(true)}
+            poster="/images/vlcsnap-2025-08-04-13h51m56s396.png"
+            preload="none"
+          >
+            <source src="/images/hero-bg.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/40" />
+          {/* Mystical gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#264653]/60 via-transparent to-[#A8DADC]/30" />
+        </div>
+      )}
+
       {/* Mystical floating elements */}
-      <div className="absolute inset-0 z-5">
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-20 left-10 w-4 h-4 bg-[#A8DADC]/40 transform rotate-45 animate-pulse sparkle" />
         <div className="absolute top-40 right-20 w-6 h-6 bg-[#CBAACB]/50 transform rotate-45 animate-pulse sparkle" style={{ animationDelay: '1s' }} />
         <div className="absolute bottom-40 left-20 w-3 h-3 bg-[#FFD9A0]/60 transform rotate-45 animate-pulse sparkle" style={{ animationDelay: '2s' }} />
@@ -44,7 +104,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content */}
-      <Container className="relative z-10 text-center">
+      <Container className="relative z-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}

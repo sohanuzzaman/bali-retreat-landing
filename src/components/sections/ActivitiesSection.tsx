@@ -10,7 +10,7 @@ const activities = [
   {
     title: 'Yin Yoga & Čchi-kung',
     description: 'Jemné protažení a hluboká relaxace pro uvolnění napětí, harmonizaci čaker a meridiánů a naladění se na vlastní vnitřní moudrost.',
-    image: '/images/retreat/P 1.jpg',
+    image: '/images/retreat/P6.jpg',
     icon: Flower2
   },
   {
@@ -40,7 +40,7 @@ const activities = [
   {
     title: 'Tři Posvátná Místa',
     description: 'Návštěva třech nejposvátějších chrámů Bali pro duchovní obnovu a spojení s místní kulturou',
-    image: '/images/retreat/P4.jpg',
+    image: '/images/retreat/P15.jpg',
     icon: Sparkles
   }
 ];

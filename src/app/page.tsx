@@ -5,12 +5,12 @@ import DivineFeminineSection from '@/components/sections/DivineFeminineSection';
 import AccommodationSection from '@/components/sections/AccommodationSection';
 import TargetAudienceSection from '@/components/sections/TargetAudienceSection';
 import FacilitatorsSection from '@/components/sections/FacilitatorsSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import InvestmentSection from '@/components/sections/InvestmentSection';
 import BookingSection from '@/components/sections/BookingSection';
 import FAQSection from '@/components/sections/FAQSection';
 import FinalCTASection from '@/components/sections/FinalCTASection';
 import GallerySection from '@/components/sections/GallerySection';
+import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
   return (
@@ -22,12 +22,12 @@ export default function Home() {
       <AccommodationSection />
       <TargetAudienceSection />
       <FacilitatorsSection />
-      <TestimonialsSection />
       <InvestmentSection />
       <BookingSection />
       <FAQSection />
       <FinalCTASection />
       <GallerySection />
+      <ContactSection />
     </main>
   );
 }

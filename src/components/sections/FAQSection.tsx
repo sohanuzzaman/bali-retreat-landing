@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Container } from '../ui';
 import { Mail, Phone } from 'lucide-react';
+import { contactInfo } from '@/lib/config';
 
 const faqs = [
   {
@@ -165,14 +166,20 @@ const FAQSection: React.FC = () => {
               15minutový hovor, kde zodpovíme všechny tvé otázky.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="flex items-center justify-center space-x-2 px-6 py-3 bg-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/80 transition-colors duration-300">
+              <a 
+                href={`mailto:${contactInfo.email}`}
+                className="flex items-center justify-center space-x-2 px-6 py-3 bg-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/80 transition-colors duration-300"
+              >
                 <Mail className="w-4 h-4" />
                 <span>Napsat email</span>
-              </button>
-              <button className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/10 transition-colors duration-300">
+              </a>
+              <a 
+                href={`tel:${contactInfo.phone.main}`}
+                className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/10 transition-colors duration-300"
+              >
                 <Phone className="w-4 h-4" />
-                <span>Rezervovat hovor</span>
-              </button>
+                <span>Zavolať</span>
+              </a>
             </div>
           </div>
         </motion.div>

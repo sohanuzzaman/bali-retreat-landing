@@ -1,5 +1,5 @@
 export const contactInfo = {
-  email: 'info@motheryourself.com',
+  email: 'subrankovicova@gmail.com',
   phone: {
     main: '00420773517707',
     whatsapp: '+44 7860 231069'

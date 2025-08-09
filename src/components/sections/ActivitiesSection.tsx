@@ -34,7 +34,7 @@ const activities = [
   {
     title: 'Masáže & Wellness',
     description: 'Luxusní balijské masáže a wellness procedury pro kompletní relaxaci těla i duše',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  image: '/images/massage.jpg',
     icon: Sparkles
   },
   {

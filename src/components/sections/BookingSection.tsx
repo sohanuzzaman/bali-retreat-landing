@@ -17,7 +17,7 @@ const BookingSection: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+          src="/images/booking-bg.jpg"
           alt="Luxusní Bali resort"
           fill
           className="object-cover"

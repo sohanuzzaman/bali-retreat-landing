@@ -11,21 +11,21 @@ const testimonials = [
     quote: 'Vrátila jsem se jako úplně jiná žena. Konečně vím, kdo skutečně jsem a co chci od života. Stanka a Ayka mi pomohly najít mou vnitřní bohyni.',
     author: 'Petra K.',
     location: 'Praha',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+  image: '/images/testimonials/testimonial1.jpg',
     transformation: 'Z vyčerpané matky na sebevědomou ženu'
   },
   {
     quote: 'Nikdy jsem nezažila tak hluboké spojení se sebou samou. Rituály s kakaem otevřely mé srdce způsobem, který jsem si nikdy nedokázala představit.',
     author: 'Markéta S.',
     location: 'Brno',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+  image: '/images/testimonials/testimonial2.jpg',
     transformation: 'Objevila svou kreativní sílu'
   },
   {
     quote: 'Bali retreat změnil můj život. Naučila jsem se milovat sebe samu a konečně jsem našla odvahu opustit toxický vztah. Jsem vděčná za každý moment.',
     author: 'Jana M.',
     location: 'Ostrava',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80',
+  image: '/images/testimonials/testimonial3.jpg',
     transformation: 'Našla sílu pro nový začátek'
   }
 ];

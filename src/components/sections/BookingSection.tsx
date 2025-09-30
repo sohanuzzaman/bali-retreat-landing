@@ -48,7 +48,7 @@ const BookingSection: React.FC = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-cinzel font-bold text-[#D4A95C]">Early Bird</h3>
-                      <p className="text-white/80 text-sm">Do 31. srpna 2025</p>
+                      <p className="text-white/80 text-sm">Do 31. října 2025</p>
                     </div>
                     <div className="text-right">
                       <div className="text-3xl font-bold text-[#D4A95C]">3,666 €</div>
@@ -58,7 +58,7 @@ const BookingSection: React.FC = () => {
                   <div className="bg-[#D4A95C]/20 rounded-lg p-3 mb-4">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-[#FFD9A0]" />
-                      <p className="text-white text-sm font-semibold">Ušetříš 333 € při rezervaci do konce srpna!</p>
+                      <p className="text-white text-sm font-semibold">Ušetříš 333 € při rezervaci do konce října!</p>
                     </div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
@@ -79,7 +79,7 @@ const BookingSection: React.FC = () => {
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <h3 className="text-xl font-cinzel font-semibold text-white">Standardní cena</h3>
-                      <p className="text-white/60 text-sm">Od 1. září 2025</p>
+                      <p className="text-white/60 text-sm">Od 1. listopadu 2025</p>
                     </div>
                     <div className="text-2xl font-bold text-white">3,999 €</div>
                   </div>

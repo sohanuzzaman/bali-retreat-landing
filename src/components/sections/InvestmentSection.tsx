@@ -14,7 +14,7 @@ const InvestmentSection: React.FC = () => {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2025-09-30T23:59:59');
+    const targetDate = new Date('2025-10-31T23:59:59');
     
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -71,7 +71,7 @@ const InvestmentSection: React.FC = () => {
                   <h3 className="text-3xl font-playfair font-bold text-[#264653] mb-2">
                     Posvátná Investice
                   </h3>
-                  <p className="text-[#264653]/70">Do 30. září 2025</p>
+                  <p className="text-[#264653]/70">Do 31. října 2025</p>
                 </div>
 
                 <div className="text-center mb-8">
@@ -133,7 +133,7 @@ const InvestmentSection: React.FC = () => {
                 <h3 className="text-3xl font-playfair font-bold text-[#264653] mb-2">
                   Standardní Cena
                 </h3>
-                <p className="text-[#264653]/70">Od 1. září 2025</p>
+                <p className="text-[#264653]/70">Od 1. listopadu 2025</p>
               </div>
 
               <div className="text-center mb-8">
@@ -149,7 +149,7 @@ const InvestmentSection: React.FC = () => {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center text-[#264653]/70">
                   <Info className="w-5 h-5 text-[#A8DADC] mr-3" />
-                  <span>Cena platná od září 2025</span>
+                  <span>Cena platná od listopadu 2025</span>
                 </div>
                 <div className="flex items-center text-[#264653]/70">
                   <Gem className="w-5 h-5 text-[#A8DADC] mr-3" />
@@ -165,7 +165,7 @@ const InvestmentSection: React.FC = () => {
                 className="w-full py-4 border-2 border-[#A8DADC] text-[#264653] font-semibold text-lg rounded-2xl hover:bg-[#A8DADC]/10 transition-all duration-300"
                 disabled
               >
-                Dostupné od září 2025
+                Dostupné od listopadu 2025
               </button>
             </div>
           </motion.div>

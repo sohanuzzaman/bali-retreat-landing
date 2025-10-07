@@ -75,16 +75,16 @@ const InvestmentSection: React.FC = () => {
                 </div>
 
                 <div className="text-center mb-8">
-                  <div className="text-5xl font-bold text-[#FFD9A0] mb-2">3,666 €</div>
-                  <div className="text-2xl text-[#264653]/60 line-through">3,999 €</div>
+                  <div className="text-5xl font-bold text-[#FFD9A0] mb-2">3,333 €</div>
+                  <div className="text-2xl text-[#264653]/60 line-through">3,777 €</div>
                   <div className="flex items-center justify-center space-x-2 text-[#264653] font-semibold mt-2">
                     <Sparkles className="w-4 h-4 text-[#FFD9A0]" />
-                    <span>Ušetříš 333 €</span>
+                    <span>Ušetříš 444 €</span>
                   </div>
                   <div className="mt-4 text-sm text-[#264653]/80">
                     <p><strong>Platební plán:</strong></p>
                     <p>Deposit dnes: 666 €</p>
-                    <p>Zbytek (3,000 €) splatný 60 dní před odjezdem</p>
+                    <p>Zbytek částky je možné rozdělit do dvou splátek během následujících 5 měsíců.</p>
                   </div>
                 </div>
 
@@ -137,12 +137,12 @@ const InvestmentSection: React.FC = () => {
               </div>
 
               <div className="text-center mb-8">
-                <div className="text-4xl font-bold text-[#264653] mb-2">3,999 €</div>
+                <div className="text-4xl font-bold text-[#264653] mb-2">3,777 €</div>
                 <p className="text-[#264653]/60">Stále skvělá hodnota</p>
                 <div className="mt-4 text-sm text-[#264653]/80">
                   <p><strong>Platební plán:</strong></p>
                   <p>Deposit: 666 €</p>
-                  <p>Zbytek (3,333 €) splatný 60 dní před odjezdem</p>
+                  <p>Zbytek částky je možné rozdělit do dvou splátek během následujících 5 měsíců.</p>
                 </div>
               </div>
 

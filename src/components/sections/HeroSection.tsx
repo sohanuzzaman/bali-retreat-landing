@@ -150,7 +150,7 @@ const HeroSection: React.FC = () => {
               Luxusní 10-denní transformační léčivý pobyt pro ženy v ráji na Bali
             </p>
             <p className="text-lg md:text-xl font-montserrat text-[#D4A95C] mt-2 font-medium">
-              7.–17. května 2026
+              6.–16. května 2026
             </p>
           </motion.div>
 

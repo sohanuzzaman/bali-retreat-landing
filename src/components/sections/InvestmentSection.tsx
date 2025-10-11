@@ -137,7 +137,7 @@ const InvestmentSection: React.FC = () => {
               </div>
 
               <div className="text-center mb-8">
-                <div className="text-4xl font-bold text-[#264653] mb-2">3,777 €</div>
+                <div className="text-4xl font-bold text-[#264653] mb-2">3,555 €</div>
                 <p className="text-[#264653]/60">Stále skvělá hodnota</p>
                 <div className="mt-4 text-sm text-[#264653]/80">
                   <p><strong>Platební plán:</strong></p>

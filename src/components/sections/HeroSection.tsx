@@ -147,10 +147,10 @@ const HeroSection: React.FC = () => {
             className="mb-8"
           >
             <p className="text-xl md:text-2xl font-montserrat font-light text-[#F5F3EF] drop-shadow-lg max-w-4xl mx-auto leading-relaxed">
-              Luxusní 10-denní transformační léčivý pobyt pro ženy v ráji na Bali
+              Luxusní 11-denní transformační léčivý pobyt pro ženy v ráji na Bali
             </p>
             <p className="text-lg md:text-xl font-montserrat text-[#D4A95C] mt-2 font-medium">
-              6.–16. května 2026
+              5.–16. května 2026
             </p>
           </motion.div>
 

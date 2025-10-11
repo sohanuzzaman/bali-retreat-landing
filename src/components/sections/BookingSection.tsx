@@ -101,7 +101,7 @@ const BookingSection: React.FC = () => {
               <h4 className="text-xl font-cinzel font-semibold text-white mb-4">V ceně je zahrnuto:</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-sm">
                 {[
-                  '10 nocí v luxusním ubytování',
+                  '11 nocí v luxusním ubytování',
                   'Všechny denní aktivity',
                   '3x denně rostlinná strava',
                   'Ceremonie s kakaem',

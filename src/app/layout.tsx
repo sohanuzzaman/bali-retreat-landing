@@ -22,11 +22,11 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Dotyk bohyně v tobě - Luxusní retreat na Bali",
-  description: "Luxusní 10-denní pobyt pro ženy v ráji na Bali – 7.–17. května 2026. Transformační retreat s jógou, meditací a duchovním růstem.",
+  description: "Luxusní 11-denní pobyt pro ženy v ráji na Bali – 5.–16. května 2026. Transformační retreat s jógou, meditací a duchovním růstem.",
   keywords: "Bali retreat, ženský retreat, jóga, meditace, transformace, Lemuria",
   openGraph: {
     title: "Dotyk bohyně v tobě - Luxusní retreat na Bali",
-    description: "Luxusní 10-denní pobyt pro ženy v ráji na Bali – 7.–17. května 2026",
+    description: "Luxusní 11-denní pobyt pro ženy v ráji na Bali – 5.–16. května 2026",
     type: "website",
     locale: "cs_CZ",
   },

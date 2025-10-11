@@ -185,7 +185,7 @@ const InvestmentSection: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Building, title: '10 nocí luxusní ubytování', desc: 'Posvátné prostory pro odpočinek' },
+              { icon: Building, title: '11 nocí luxusní ubytování', desc: 'Posvátné prostory pro odpočinek' },
               { icon: Flower2, title: 'Všechny denní aktivity', desc: 'Yoga, meditace, rituály, tanec' },
               { icon: Leaf, title: '3x denně rostlinná strava', desc: 'Čerstvé, místní, energetické jídlo' },
               { icon: Coffee, title: 'Ceremonie s kakaem', desc: 'Posvátné rituály otevření srdce' },

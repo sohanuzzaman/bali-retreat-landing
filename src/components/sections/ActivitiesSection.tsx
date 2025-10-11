@@ -60,7 +60,7 @@ const ActivitiesSection: React.FC = () => {
             Co tě čeká na Bali
           </h2>
           <p className="text-xl text-[#0D2C36]/80 max-w-3xl mx-auto font-montserrat leading-relaxed">
-            10 dní plných transformačních zážitků, které tě provedou cestou k tvé vnitřní bohyni
+            11 dní plných transformačních zážitků, které tě provedou cestou k tvé vnitřní bohyni
           </p>
         </motion.div>
 

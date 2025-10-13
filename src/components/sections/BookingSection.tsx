@@ -51,20 +51,20 @@ const BookingSection: React.FC = () => {
                       <p className="text-white/80 text-sm">Do 31. října 2025</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-[#D4A95C]">3,666 €</div>
-                      <div className="text-white/60 line-through text-lg">3,999 €</div>
+                      <div className="text-3xl font-bold text-[#D4A95C]">3,333 €</div>
+                      <div className="text-white/60 line-through text-lg">3,555 €</div>
                     </div>
                   </div>
                   <div className="bg-[#D4A95C]/20 rounded-lg p-3 mb-4">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-[#FFD9A0]" />
-                      <p className="text-white text-sm font-semibold">Ušetříš 333 € při rezervaci do konce října!</p>
+                      <p className="text-white text-sm font-semibold">Ušetříš 222 € při rezervaci do konce října!</p>
                     </div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
                     <p className="text-white/90 text-sm">
-                      <strong>Deposit dnes:</strong> 666 € | 
-                      <strong> Zbytek:</strong> 3,000 € 
+                      <strong>Deposit dnes:</strong> 666 € |
+                      <strong> Zbytek:</strong> 2,667 €
                       <span className="text-xs block mt-1 text-white/70">
                         (splatný 60 dní před retreatum)
                       </span>
@@ -81,12 +81,12 @@ const BookingSection: React.FC = () => {
                       <h3 className="text-xl font-cinzel font-semibold text-white">Standardní cena</h3>
                       <p className="text-white/60 text-sm">Od 1. listopadu 2025</p>
                     </div>
-                    <div className="text-2xl font-bold text-white">3,999 €</div>
+                    <div className="text-2xl font-bold text-white">3,555 €</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-3">
                     <p className="text-white/90 text-sm">
-                      <strong>Deposit dnes:</strong> 666 € | 
-                      <strong> Zbytek:</strong> 3,333 €
+                      <strong>Deposit dnes:</strong> 666 € |
+                      <strong> Zbytek:</strong> 2,889 €
                       <span className="text-xs block mt-1 text-white/70">
                         (splatný 60 dní před retreatum)
                       </span>
@@ -107,7 +107,6 @@ const BookingSection: React.FC = () => {
                   'Ceremonie s kakaem',
                   'Očistné rituály',
                   '2 balijské masáže',
-                  'Výlet k delfínům',
                   'Všechny vstupy a transfery',
                   'Online komunita od března 2026',
                   'Podpora facilitátorek 24/7'

@@ -84,7 +84,7 @@ const InvestmentSection: React.FC = () => {
                   <div className="mt-4 text-sm text-[#264653]/80">
                     <p><strong>Platební plán:</strong></p>
                     <p>Deposit dnes: 666 €</p>
-                    <p>Zbytek částky je možné rozdělit do dvou splátek během následujících 5 měsíců.</p>
+                    <p>Zbytek: 2,667 € (možné rozdělit do dvou splátek během následujících 5 měsíců)</p>
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ const InvestmentSection: React.FC = () => {
                 <div className="mt-4 text-sm text-[#264653]/80">
                   <p><strong>Platební plán:</strong></p>
                   <p>Deposit: 666 €</p>
-                  <p>Zbytek částky je možné rozdělit do dvou splátek během následujících 5 měsíců.</p>
+                  <p>Zbytek: 2,889 € (možné rozdělit do dvou splátek během následujících 5 měsíců)</p>
                 </div>
               </div>
 

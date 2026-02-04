@@ -1,5 +1,7 @@
-/* Font imports for mystical typography */
+/* Font imports for mystical typography (loaded at runtime, not at build) */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
@@ -92,7 +94,7 @@
     0 0 30px rgba(255, 217, 160, 0.2);
 }
 
-/* Mystical Feminine Color Palette */
+/* Mystical Feminine Color Palette & Font variables (no build-time fetch) */
 :root {
   --color-pastel-turquoise: #A8DADC;
   --color-lilac-mist: #CBAACB;
@@ -109,6 +111,10 @@
   
   --background: #FFFFFF;
   --foreground: #264653;
+  
+  --font-playfair: 'Playfair Display', serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 body {
@@ -119,7 +125,9 @@ body {
 }
 
 /* Font family utilities */
-.font-playfair { font-family: 'Playfair Display', serif; }
+.font-playfair { font-family: var(--font-playfair); }
+.font-cinzel { font-family: var(--font-cinzel); }
+.font-montserrat { font-family: var(--font-montserrat); }
 .font-cormorant { font-family: 'Cormorant Garamond', serif; }
 .font-dancing-script { font-family: 'Dancing Script', cursive; }
 .font-great-vibes { font-family: 'Great Vibes', cursive; }

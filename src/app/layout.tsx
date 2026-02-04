@@ -1,34 +1,15 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Cinzel, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
 export const metadata: Metadata = {
-  title: "Dotyk bohyně v tobě - Luxusní retreat na Bali",
-  description: "Luxusní 11-denní pobyt pro ženy v ráji na Bali – 5.–16. května 2026. Transformační retreat s jógou, meditací a duchovním růstem.",
-  keywords: "Bali retreat, ženský retreat, jóga, meditace, transformace, Lemuria",
+  title: "Návrat K Sebe - Liečivý retreat na Bali",
+  description: "8-dňový transformačný liečivý pobyt pre ženy v raji na Bali – 1.–8. mája 2026.",
+  keywords: "Bali retreat, ženský retreat, jóga, meditácia, transformácia",
   openGraph: {
-    title: "Dotyk bohyně v tobě - Luxusní retreat na Bali",
-    description: "Luxusní 11-denní pobyt pro ženy v ráji na Bali – 5.–16. května 2026",
+    title: "Návrat K Sebe - Liečivý retreat na Bali",
+    description: "8-dňový transformačný liečivý pobyt pre ženy v raji na Bali – 1.–8. mája 2026",
     type: "website",
-    locale: "cs_CZ",
+    locale: "sk_SK",
   },
 };
 
@@ -38,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs">
+    <html lang="sk">
       <body
-        className={`${playfair.variable} ${cinzel.variable} ${montserrat.variable} font-montserrat antialiased`}
+        className="font-montserrat antialiased"
         suppressHydrationWarning={true}
       >
         {children}

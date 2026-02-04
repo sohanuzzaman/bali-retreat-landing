@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero-bg.webp"
-          alt="Luxusní Bali retreat prostředí s tropickou přírodou"
+          alt="Luxusný Bali retreat v tropickej prírode"
           fill
           className="object-cover"
           priority
@@ -135,8 +135,8 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            Dotek bohyně<br />
-            <span className="text-[#FFD9A0] font-dancing-script">v tobě</span>
+            Návrat K Sebe<br />
+            <span className="text-[#FFD9A0] font-dancing-script text-3xl md:text-4xl lg:text-5xl">keď sa žena znovu dotkne svojej podstaty</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -147,10 +147,10 @@ const HeroSection: React.FC = () => {
             className="mb-8"
           >
             <p className="text-xl md:text-2xl font-montserrat font-light text-[#F5F3EF] drop-shadow-lg max-w-4xl mx-auto leading-relaxed">
-              Luxusní 11-denní transformační léčivý pobyt pro ženy v ráji na Bali
+              8-dňový transformačný liečivý pobyt pre ženy v raji na Bali
             </p>
             <p className="text-lg md:text-xl font-montserrat text-[#D4A95C] mt-2 font-medium">
-              5.–16. května 2026
+              1.–8. mája 2026
             </p>
           </motion.div>
 
@@ -167,7 +167,7 @@ const HeroSection: React.FC = () => {
               onClick={scrollToBooking}
               className="group relative px-8 py-4 bg-[#FFD9A0] text-[#264653] font-montserrat font-bold text-lg rounded-full hover:bg-[#FFD9A0]/90 transition-all duration-300 shadow-2xl hover:shadow-[#FFD9A0]/25 min-w-[280px] overflow-hidden mystical-glow"
             >
-              <span className="relative z-10">Rezervuj si své místo</span>
+              <span className="relative z-10">Rezervuj si svoje miesto</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </button>
             
@@ -175,7 +175,7 @@ const HeroSection: React.FC = () => {
               onClick={scrollToActivities}
               className="px-8 py-4 border-2 border-white text-white font-montserrat font-semibold text-lg rounded-full hover:bg-white hover:text-[#264653] transition-all duration-300 min-w-[240px] backdrop-blur-sm"
             >
-              Prozkoumej program
+              Preskúmaj program
             </button>
           </motion.div>
 

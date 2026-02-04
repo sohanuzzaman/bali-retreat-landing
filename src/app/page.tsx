@@ -2,7 +2,6 @@ import HeroSection from '@/components/sections/HeroSection';
 import SacredInvitationSection from '@/components/sections/SacredInvitationSection';
 import ActivitiesSection from '@/components/sections/ActivitiesSection';
 import DivineFeminineSection from '@/components/sections/DivineFeminineSection';
-import AccommodationSection from '@/components/sections/AccommodationSection';
 import TargetAudienceSection from '@/components/sections/TargetAudienceSection';
 import FacilitatorsSection from '@/components/sections/FacilitatorsSection';
 import InvestmentSection from '@/components/sections/InvestmentSection';
@@ -19,7 +18,6 @@ export default function Home() {
       <SacredInvitationSection />
       <ActivitiesSection />
       <DivineFeminineSection />
-      <AccommodationSection />
       <TargetAudienceSection />
       <FacilitatorsSection />
       <InvestmentSection />

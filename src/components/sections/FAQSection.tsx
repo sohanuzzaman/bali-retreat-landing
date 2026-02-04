@@ -8,54 +8,54 @@ import { contactInfo } from '@/lib/config';
 
 const faqs = [
   {
-    question: 'Potřebujem zkušenosti s jógou nebo meditací?',
-    answer: 'Vůbec ne! Náš retreat je navržen pro ženy všech úrovní. Ať už jsi úplný začátečník nebo pokročilá praktikantka, najdeš zde své místo. Naše facilitátorky tě jemně provedou každou aktivitou.',
-    category: 'Příprava'
+    question: 'Potrebujem skúsenosti s jógou alebo meditáciou?',
+    answer: 'Vôbec nie! Náš retreat je navrhnutý pre ženy všetkých úrovní. Či už si úplná začiatočníčka alebo pokročilá praktikantka, nájdeš tu svoje miesto. Naša facilitátorka ťa jemne prevedie každou aktivitou.',
+    category: 'Príprava'
   },
   {
-    question: 'Jak probíhá stravování? Jsem vegetariánka/veganka.',
-    answer: 'Všechna jídla jsou 100% rostlinná, čerstvá a připravovaná z místních ingrediencí. Pokud máš specifické alergie nebo dietní omezení, dej nám vědět při rezervaci a vše přizpůsobíme.',
-    category: 'Stravování'
+    question: 'Ako prebieha stravovanie? Som vegetariánka/vegánka.',
+    answer: 'Všetky jedlá sú 100% rastlinné, čerstvé a pripravované z miestnych ingrediencií. Ak máš špecifické alergie alebo diétne obmedzenia, daj nám vedieť pri rezervácii a všetko prispôsobíme.',
+    category: 'Stravovanie'
   },
   {
-    question: 'Co když se necítím připravená na "hlubokou transformaci"?',
-    answer: 'Transformace probíhá přirozeně a v tvém vlastním tempu. Nikdo tě nebude nutit do ničeho, co se ti nebude líbit. Vytváříme bezpečný prostor, kde můžeš být autentická a jít jen tak hluboko, jak se cítíš připravená.',
+    question: 'Čo ak sa necítim pripravená na "hlbokú transformáciu"?',
+    answer: 'Transformácia prebieha prirodzene a v tvojom vlastnom tempe. Nikto ťa nebude nútiť do ničoho, čo sa ti nebude páčiť. Vytvárame bezpečný priestor, kde môžeš byť autentická a ísť len tak hlboko, ako sa cítiš pripravená.',
     category: 'Obavy'
   },
   {
-    question: 'Jaké jsou podmínky zrušení rezervace?',
-    answer: 'Rezervační depozit ve výši 666 EUR je nevratný. Při zrušení 60–30 dní před začátkem retreatu vracíme 50 % z celkové částky (bez depozitu); méně než 30 dní před retreatem je možné převést rezervaci na jinou osobu.',
-    category: 'Rezervace'
+    question: 'Aké sú podmienky zrušenia rezervácie?',
+    answer: 'Podrobné podmienky zrušenia ti budú poskytnuté pri rezervácii. Kontaktuj nás pre viac informácií.',
+    category: 'Rezervácia'
   },
   {
-    question: 'Budu mít čas na odpočinek a soukromí?',
-    answer: 'Rozhodně! Program je navržen s ohledem na potřebu odpočinku. Každý den máš několik hodin volného času na relaxaci, osobní reflexi nebo jen tak na nic.',
+    question: 'Budem mať čas na oddych a súkromie?',
+    answer: 'Rozhodne! Program je navrhnutý s ohľadom na potrebu odpočinku. Každý deň máš niekoľko hodín voľného času na relaxáciu, osobnú reflexiu alebo len tak na nič.',
     category: 'Program'
   },
   {
-    question: 'Co si mám vzít s sebou?',
-    answer: 'Pošleme ti detailní seznam doporučených věcí po rezervaci. Základně potřebuješ pohodlné oblečení na jógu, plavky, opalovací krém a otevřené srdce. Vše ostatní zajistíme.',
-    category: 'Příprava'
+    question: 'Čo si mám vziať so sebou?',
+    answer: 'Pošleme ti detailný zoznam odporúčaných vecí po rezervácii. Základne potrebuješ pohodlné oblečenie na jogu, plavky, opaľovací krém a otvorené srdce. Všetko ostatné zabezpečíme.',
+    category: 'Príprava'
   },
   {
-    question: 'Jsem introvert. Budu se cítit komfortně ve skupině?',
-    answer: 'Mnoho našich účastnic jsou introvertky! Respektujeme různé typy osobností a vytváříme prostor jak pro sdílení, tak pro tiché pozorování. Nikdo tě nebude nutit mluvit, pokud nebudeš chtít.',
+    question: 'Som introvert. Budem sa cítiť komfortne v skupine?',
+    answer: 'Mnohé naše účastníčky sú introvertky! Rešpektujeme rôzne typy osobností a vytvárame priestor ako pre zdieľanie, tak pre tiché pozorovanie. Nikto ťa nebude nútiť hovoriť, ak nebudeš chcieť.',
     category: 'Obavy'
   },
   {
-    question: 'Co když se mi nebude líbit některá aktivita?',
-    answer: 'Každá aktivita je dobrovolná. Pokud se ti něco nebude líbit nebo se nebudeš cítit komfortně, můžeš se kdykoli stáhnout a využít čas jinak. Tvoje pohoda je naší prioritou.',
+    question: 'Čo ak sa mi nebude páčiť niektorá aktivita?',
+    answer: 'Každá aktivita je dobrovoľná. Ak sa ti niečo nebude páčiť alebo sa nebudeš cítiť komfortne, môžeš sa kedykoľvek stiahnuť a využiť čas inak. Tvoja pohoda je našou prioritou.',
     category: 'Program'
   }
 ];
 
-const categories = ['Všechny', 'Příprava', 'Program', 'Stravování', 'Rezervace', 'Obavy'];
+const categories = ['Všetky', 'Príprava', 'Program', 'Stravovanie', 'Rezervácia', 'Obavy'];
 
 const FAQSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('Všechny');
+  const [activeCategory, setActiveCategory] = useState('Všetky');
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
-  const filteredFAQs = activeCategory === 'Všechny' 
+  const filteredFAQs = activeCategory === 'Všetky' 
     ? faqs 
     : faqs.filter(faq => faq.category === activeCategory);
 
@@ -70,10 +70,10 @@ const FAQSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#264653] mb-6">
-            <span className="text-[#FFD9A0] font-dancing-script">Posvátné</span> Otázky & Odpovědi
+            <span className="text-[#FFD9A0] font-dancing-script">Posvätné</span> Otázky & Odpovede
           </h2>
           <p className="text-xl text-[#264653]/80 max-w-3xl mx-auto leading-relaxed">
-            Rozumíme tvým obavám a otázkám. Zde najdeš odpovědi na to, co tě nejvíce zajímá.
+            Rozumieme tvojim obavám a otázkam. Tu nájdeš odpovede na to, čo ťa najviac zaujíma.
           </p>
         </motion.div>
 
@@ -162,8 +162,8 @@ const FAQSection: React.FC = () => {
               Stále máš otázky?
             </h3>
             <p className="text-[#264653]/80 mb-6 max-w-2xl mx-auto">
-              Rádi si s tebou promluvíme osobně. Napíš nám nebo si rezervuj bezplatný 
-              15minutový hovor, kde zodpovíme všechny tvé otázky.
+              Radi si s tebou pohovoríme osobne. Napíš nám alebo si rezervuj bezplatný 
+              15-minútový hovor, kde zodpovieme všetky tvoje otázky.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -171,7 +171,7 @@ const FAQSection: React.FC = () => {
                 className="flex items-center justify-center space-x-2 px-6 py-3 bg-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/80 transition-colors duration-300"
               >
                 <Mail className="w-4 h-4" />
-                <span>Napsat email</span>
+                <span>Napísať email</span>
               </a>
               <a 
                 href={`tel:${contactInfo.phone.main}`}

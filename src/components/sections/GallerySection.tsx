@@ -50,10 +50,10 @@ const GallerySection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#264653] mb-6">
-            <span className="text-[#FFD9A0] font-dancing-script">Vizuální</span> Cesta
+            <span className="text-[#FFD9A0] font-dancing-script">Vizuálna</span> Cesta
           </h2>
           <p className="text-xl text-[#264653]/80 max-w-3xl mx-auto leading-relaxed">
-            Nech se inspirovat krásou míst a momentů, které tě čekají na tomto posvátném retreatu.
+            Nechaj sa inšpirovať krásou miest a momentov, ktoré ťa čakajú na tomto posvätnom retreate.
           </p>
         </motion.div>
 
@@ -144,16 +144,16 @@ const GallerySection: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-[#A8DADC]/20 to-[#CBAACB]/20 rounded-3xl p-8 border border-[#A8DADC]/30">
             <h3 className="text-2xl font-playfair font-bold text-[#264653] mb-4">
-              Chceš být součástí <span className="text-[#FFD9A0]">těchto momentů?</span>
+              Chceš byť súčasťou <span className="text-[#FFD9A0]">týchto momentov?</span>
             </h3>
             <p className="text-[#264653]/80 mb-6 max-w-2xl mx-auto">
-              Každá fotka vypráví příběh transformace. Tvůj příběh může být další.
+              Každá fotka rozpráva príbeh transformácie. Tvoj príbeh môže byť ďalší.
             </p>
             <button 
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-4 bg-[#FFD9A0] text-[#264653] font-semibold rounded-full hover:bg-[#FFD9A0]/80 transition-all duration-300 shadow-lg"
             >
-              Ano, chci zažít tuto krásu!
+              Áno, chcem zažiť túto krásu!
             </button>
           </div>
         </motion.div>

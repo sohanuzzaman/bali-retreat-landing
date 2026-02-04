@@ -7,38 +7,38 @@ import { Crown, Heart, Moon, Sparkles, Eye, Users } from 'lucide-react';
 
 const transformations = [
   {
-    title: 'Probuzení Vnitřní Bohyně',
-    description: 'Objevíš svou autentickou sílu a naučíš se ji vyjadřovat s grácií a sebevědomím.',
+    title: 'Prebudenie Vnútornej Sily',
+    description: 'Objavíš svoju autentickú silu a naučíš sa ju vyjadrovať s gráciou a sebavedomím.',
     icon: Crown,
     color: 'from-[#FFD9A0] to-[#CBAACB]'
   },
   {
-    title: 'Uzdravení Ženského Srdce',
-    description: 'Uvolníš staré rany a otevřeš se pro lásku k sobě samé i k ostatním.',
+    title: 'Uzdravenie Ženského Srdca',
+    description: 'Uvoľníš staré rany a otvoríš sa pre lásku k sebe samej i k ostatným.',
     icon: Heart,
     color: 'from-[#CBAACB] to-[#A8DADC]'
   },
   {
-    title: 'Spojení s Cyklickou Moudrostí',
-    description: 'Naučíš se žít v souladu se svými přirozenými rytmy a cykly.',
+    title: 'Spojenie s Cyklickou Múdrosťou',
+    description: 'Naučíš sa žiť v súlade so svojimi prirodzenými rytmami a cyklami.',
     icon: Moon,
     color: 'from-[#A8DADC] to-[#FFD9A0]'
   },
   {
-    title: 'Aktivace Kreativní Síly',
-    description: 'Probudíš svou tvůrčí energii a najdeš odvahu ji sdílet se světem.',
+    title: 'Aktivácia Tvorivej Sily',
+    description: 'Prebudíš svoju tvorivú energiu a nájdeš odvahu ju zdieľať so svetom.',
     icon: Sparkles,
     color: 'from-[#FFD9A0] to-[#A8DADC]'
   },
   {
-    title: 'Návrat k Intuitivní Moudrosti',
-    description: 'Znovu se naučíš důvěřovat své vnitřní moudrosti a intuici.',
+    title: 'Návrat k Intuitívnej Múdrosti',
+    description: 'Znovu sa naučíš dôverovať svojej vnútornej múdrosti a intuícii.',
     icon: Eye,
     color: 'from-[#CBAACB] to-[#FFD9A0]'
   },
   {
-    title: 'Posvátné Sesterství',
-    description: 'Zažiješ sílu ženského kruhu a vytvoříš hluboká přátelství na celý život.',
+    title: 'Posvätné Sesterstvo',
+    description: 'Zažiješ silu ženského kruhu a vytvoríš hlboké priateľstvá na celý život.',
     icon: Users,
     color: 'from-[#A8DADC] to-[#CBAACB]'
   }
@@ -98,12 +98,12 @@ const DivineFeminineSection: React.FC = () => {
           className="text-center mb-20"
         >
           <h2 className="text-5xl md:text-6xl font-playfair font-bold text-[#264653] mb-8 leading-tight">
-            Tvá <span className="text-[#FFD9A0] font-dancing-script">Transformace</span><br />
-            Čeká na Tebe
+            Tvoja <span className="text-[#FFD9A0] font-dancing-script">Transformácia</span><br />
+            Čaká na Teba
           </h2>
           <p className="text-xl text-[#264653]/80 max-w-4xl mx-auto leading-relaxed">
-            Tento retreat není jen o aktivitách. Je to o hlubokém probuzení tvé pravé podstaty, 
-            o návratu k ženské moudrosti, kterou máš zakódovanou v DNA.
+            Tento retreat nie je len o aktivitách. Je to o hlbokom prebudení tvojej pravej podstaty, 
+            o návrate k ženskej múdrosti, ktorú máš zakódovanú v DNA.
           </p>
         </motion.div>
 

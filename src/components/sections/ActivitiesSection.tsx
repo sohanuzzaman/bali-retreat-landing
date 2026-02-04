@@ -4,43 +4,31 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container, Card } from '../ui';
-import { Flower2, Coffee, Music, Droplets, Sparkles } from 'lucide-react';
+import { Coffee, Music, Droplets, Sparkles } from 'lucide-react';
 
 const activities = [
   {
-    title: 'Yin Yoga & Čchi-kung',
-    description: 'Jemné protažení a hluboká relaxace pro uvolnění napětí, harmonizaci čaker a meridiánů a naladění se na vlastní vnitřní moudrost.',
-    image: '/images/retreat/P6.jpg',
-    icon: Flower2
-  },
-  {
-    title: 'Rituály s Kakaem',
-    description: 'Posvátné ceremonie s ceremonijním kakaem pro otevření srdce a propojení s ženskou energií',
+    title: 'Rituály s Kakaom',
+    description: 'Posvätné ceremónie s ceremoniálnym kakaom pre otvorenie srdca a prepojenie so ženskou energiou',
     image: '/images/cacao.jpeg',
     icon: Coffee
   },
   {
-    title: 'Intuitivní Tanec',
-    description: 'Svobodný pohyb pro uvolnění emocí a vyjádření autentického já prostřednictvím těla',
+    title: 'Intuitívny Tanec',
+    description: 'Slobodný pohyb pre uvoľnenie emócií a vyjadrenie autentického ja prostredníctvom tela',
     image: '/images/retreat/P 2.jpg',
     icon: Music
   },
   {
     title: 'Očistné Rituály',
-    description: 'Tradiční balijské očistné ceremonie u posvátných pramenů pro duchovní obnovu',
+    description: 'Tradičné balijské očistné ceremónie pri posvätných prameňoch pre duchovnú obnovu',
     image: '/images/retreat/P3.jpg',
     icon: Droplets
   },
   {
     title: 'Masáže & Wellness',
-    description: 'Luxusní balijské masáže a wellness procedury pro kompletní relaxaci těla i duše',
+    description: 'Luxusné balijské masáže a wellness procedúry pre kompletnú relaxáciu tela i duše',
     image: '/images/Brown and White Massage Treatment Facebook Post_20250929_093950_0000.png',
-    icon: Sparkles
-  },
-  {
-    title: 'Tři Posvátná Místa',
-    description: 'Návštěva třech nejposvátějších chrámů Bali pro duchovní obnovu a spojení s místní kulturou',
-    image: '/images/retreat/P15.jpg',
     icon: Sparkles
   }
 ];
@@ -57,10 +45,10 @@ const ActivitiesSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#0D2C36] mb-6">
-            Co tě čeká na Bali
+            Čo ťa čaká na Bali
           </h2>
           <p className="text-xl text-[#0D2C36]/80 max-w-3xl mx-auto font-montserrat leading-relaxed">
-            11 dní plných transformačních zážitků, které tě provedou cestou k tvé vnitřní bohyni
+            8 dní plných transformačných zážitkov, ktoré ťa prevedú cestou k tvojej vnútornej podstate
           </p>
         </motion.div>
 
@@ -113,16 +101,16 @@ const ActivitiesSection: React.FC = () => {
         >
           <div className="bg-gradient-to-r from-[#2AB8A6]/10 to-[#D5C7E8]/10 rounded-2xl p-8 border border-[#2AB8A6]/20">
             <h3 className="text-2xl font-playfair font-semibold text-[#0D2C36] mb-4">
-              A to není vše...
+              A to nie je všetko...
             </h3>
             <p className="text-[#0D2C36]/80 font-montserrat mb-6 max-w-2xl mx-auto">
-              Každý den tě čekají další překvapení, spontánní aktivity a prostor pro osobní růst v kruhu inspirativních žen.
+              Každý deň ťa čakajú ďalšie prekvapenia, spontánne aktivity a priestor pre osobný rast v kruhu inšpiratívnych žien.
             </p>
             <button 
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 bg-[#2AB8A6] text-white font-montserrat font-semibold rounded-full hover:bg-[#2AB8A6]/90 transition-colors duration-300 shadow-lg"
             >
-              Chci být součástí
+              Chcem byť súčasťou
             </button>
           </div>
         </motion.div>

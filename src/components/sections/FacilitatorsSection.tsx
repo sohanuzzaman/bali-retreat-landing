@@ -4,26 +4,16 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Container } from '../ui';
-import { Flame, Waves } from 'lucide-react';
 
 const facilitators = [
   {
     name: 'Stanka Karpatyová',
-    title: 'Léčitelka Srdce & Mother of Empowerment',
-    bio: 'Žena, která kráčí životem s láskou, jemností a hlubokým propojením se sebou. Máma, manželka, průvodkyně a léčitelka. Tvoří bezpečné a posvátné prostory pro ženy, které jsou připravené se zastavit a znovu se nadechnout. Léčitelka dělohy a Luny, držitelka ženské moudrosti, která skrze své dary pomáhá ženám vracet se zpět ke svému tělu, cykličnosti, intuici a tichému vnitřnímu hlasu. Její cesta je prolnutá mateřstvím, dotekem přírody, rituály, pohybem a posvátností každodennosti. V jejím poli se ženy cítí viděné, uctěné a bezpečně vedené zpět domů – k sobě, ke své vnitřní síle, k hluboké lásce a pravdě, kterou nosí uvnitř sebe.',
-    specialties: ['Léčení ženského srdce', 'Rituály s kakaem', 'Empowerment coaching', 'Mateřská moudrost'],
+    title: 'Liečiteľka Srdca & Mother of Empowerment',
+    bio: 'Žena, ktorá kráča životom s láskou, jemnosťou a hlbokým prepojením so sebou. Mama, manželka, sprievodkyňa a liečiteľka. Tvorí bezpečné a posvätné priestory pre ženy, ktoré sú pripravené sa zastaviť a znovu sa nadýchnuť. Liečiteľka maternice a Luny, držiteľka ženskej múdrosti, ktorá skrze svoje dary pomáha ženám vracať sa späť k svojmu telu, cykličnosti, intuícii a tichému vnútornému hlasu. Jej cesta je preniknutá materstvom, dotykom prírody, rituálmi, pohybom a posvätnosťou každodennosti. V jej poli sa ženy cítia videné, uctené a bezpečne vedené späť domov – k sebe, k svojej vnútornej sile, k hlbokej láske a pravde, ktorú nosia vo vnútri seba.',
+    specialties: ['Liečenie ženského srdca', 'Rituály s kakaom', 'Empowerment coaching', 'Materská múdrosť'],
     image: '/images/stana.jpeg',
-    quote: 'Každá žena v sobě nosí bohyni. Moje role je pomoci jí ji najít a osvobodit.',
-    energy: 'Mateřská, mocná, uzdravující'
-  },
-  {
-    name: 'Ayka',
-    title: 'Průvodkyně energií, meditací a ženským laděním',
-    bio: 'Vede ženy zpět do těla, zpět k dechu, zpět k sobě. Certifikovaná lektorka yin jógy, čchi-kungu a meditací, která otevírá cestu k vnitřnímu klidu, síle a hlubokému propojení. Specializuje se na harmonizaci čaker, práci s energetickými dráhami (meridiány) a vytváří prostor, kde se žena může uvolnit, zpomalit a skutečně cítit. Vědomě. V hloubce. V souladu.',
-    specialties: ['Yin yoga', 'Meditace', 'Ženské cykly'],
-    image: '/images/Ayka.jpeg',
-    quote: 'V tichosti yin přístupu nacházíme svou největší sílu.',
-    energy: 'Jemná, hluboká, intuitivní'
+    quote: 'Každá žena v sebe nosí bohyňu. Moja úloha je pomôcť jej ju nájsť a oslobodiť.',
+    energy: 'Materská, mocná, uzdravujúca'
   }
 ];
 
@@ -45,10 +35,10 @@ const FacilitatorsSection: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#264653] mb-6">
-            Tvé <span className="text-[#FFD9A0] font-dancing-script">Průvodkyně</span>
+            Tvoja <span className="text-[#FFD9A0] font-dancing-script">Sprievodkyňa</span>
           </h2>
           <p className="text-xl text-[#264653]/80 max-w-3xl mx-auto leading-relaxed">
-            Dvě ženy, které prošly vlastní transformací a nyní drží posvátný prostor pro tvou cestu.
+            Žena, ktorá prešla vlastnou transformáciou a teraz drží posvätný priestor pre tvoju cestu.
           </p>
         </motion.div>
 
@@ -112,7 +102,7 @@ const FacilitatorsSection: React.FC = () => {
 
                 {/* Specialties */}
                 <div>
-                  <h4 className="font-semibold text-[#264653] mb-3">Specializace:</h4>
+                  <h4 className="font-semibold text-[#264653] mb-3">Špecializácia:</h4>
                   <div className="flex flex-wrap gap-2">
                     {facilitator.specialties.map((specialty, specialtyIndex) => (
                       <span
@@ -128,53 +118,6 @@ const FacilitatorsSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
-
-        {/* Combined energy section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-20"
-        >
-          <div className="bg-gradient-to-r from-[#264653]/90 to-[#264653]/80 rounded-3xl p-12 text-center relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full"
-                   style={{
-                     backgroundImage: `radial-gradient(circle at 30% 30%, rgba(255, 217, 160, 0.3) 0%, transparent 50%),
-                                      radial-gradient(circle at 70% 70%, rgba(168, 218, 220, 0.3) 0%, transparent 50%)`,
-                     backgroundSize: '200px 200px'
-                   }} />
-            </div>
-
-            <div className="relative z-10">
-              <h3 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
-                Společně Vytváříme <span className="text-[#FFD9A0]">Posvátný Prostor</span>
-              </h3>
-              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                Kombinace Stančiny mateřské síly a Aykiny jemné moudrosti vytváří jedinečnou alchymii, 
-                ve které se každá žena cítí bezpečně držená a zároveň povzbuzená k růstu.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-                <div className="text-center">
-                  <div className="flex justify-center mb-4">
-                    <Flame className="w-12 h-12 text-[#FFD9A0]" />
-                  </div>
-                  <h4 className="text-[#FFD9A0] font-semibold mb-2">Aktivní Transformace</h4>
-                  <p className="text-white/80 text-sm">Stančina energie tě povzbudí k odvážným krokům</p>
-                </div>
-                <div className="text-center">
-                  <div className="flex justify-center mb-4">
-                    <Waves className="w-12 h-12 text-[#FFD9A0]" />
-                  </div>
-                  <h4 className="text-[#FFD9A0] font-semibold mb-2">Jemné Přijetí</h4>
-                  <p className="text-white/80 text-sm">Aykina přítomnost tě objímá v bezpečí</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

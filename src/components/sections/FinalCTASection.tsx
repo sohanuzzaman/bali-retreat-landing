@@ -27,7 +27,7 @@ const FinalCTASection: React.FC = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/hero-bg.webp"
-          alt="Západ slunce na Bali"
+          alt="Západ slnka na Bali"
           fill
           className="object-cover"
         />
@@ -60,28 +60,28 @@ const FinalCTASection: React.FC = () => {
           className="text-center"
         >
           <h2 className="text-5xl md:text-6xl font-playfair font-bold text-white mb-8 leading-tight">
-            Tvá Bohyně<br />
-            <span className="text-[#FFD9A0] font-dancing-script">Čeká</span>
+            Tvoja Vnútorná Sila<br />
+            <span className="text-[#FFD9A0] font-dancing-script">Čaká</span>
           </h2>
           
           <div className="max-w-4xl mx-auto space-y-8 mb-12">
             <p className="text-2xl text-white/90 leading-relaxed">
-              Hluboko v tobě žije žena, která zná svou hodnotu, důvěřuje své intuici 
-              a žije v souladu se svou pravdou.
+              Hlboko v tebe žije žena, ktorá pozná svoju hodnotu, dôveruje svojej intuícii 
+              a žije v súlade so svojou pravdou.
             </p>
             
             <p className="text-xl text-white/80 leading-relaxed">
-              Možná ji cítíš jen jako tichý šepot, možná jako hlasité volání. 
-              Ať už je to jakkoliv, je čas ji konečně osvobodit.
+              Možno ju cítiš len ako tichý šepot, možno ako hlasné volanie. 
+              Nech už je to akokoľvek, je čas ju konečne oslobodiť.
             </p>
             
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
               <p className="text-lg text-white/90 italic leading-relaxed">
-                &ldquo;Každá žena má právo žít jako bohyně - mocná, krásná, svobodná. 
-                Tento retreat je tvou branou k tomuto životu.&rdquo;
+                &ldquo;Každá žena má právo žiť ako bohyňa - mocná, krásna, slobodná. 
+                Tento retreat je tvojou bránou k tomuto životu.&rdquo;
               </p>
               <p className="text-[#FFD9A0] mt-4 font-dancing-script text-xl">
-                - Stanka & Ayka
+                - Stanka
               </p>
             </div>
           </div>
@@ -96,7 +96,7 @@ const FinalCTASection: React.FC = () => {
           >
             <div className="text-center">
               <h3 className="text-3xl font-playfair font-bold text-white mb-4">
-                Máš dvě možnosti:
+                Máš dve možnosti:
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
@@ -104,10 +104,10 @@ const FinalCTASection: React.FC = () => {
                   <div className="flex justify-center mb-4">
                     <Frown className="w-12 h-12 text-white/60" />
                   </div>
-                  <h4 className="text-white font-semibold mb-3">Zůstat stejná</h4>
+                  <h4 className="text-white font-semibold mb-3">Zostať rovnaká</h4>
                   <p className="text-white/70 text-sm">
-                    Pokračovat v životě, jak ho znáš. Možná se jednou vrátíš k této stránce 
-                    a budeš litovat, že jsi neměla odvahu.
+                    Pokračovať v živote, ako ho poznáš. Možno sa jedného dňa vrátiš na túto stránku 
+                    a budeš ľutovať, že si nemala odvahu.
                   </p>
                 </div>
                 
@@ -115,10 +115,10 @@ const FinalCTASection: React.FC = () => {
                   <div className="flex justify-center mb-4">
                     <Sparkles className="w-12 h-12 text-[#FFD9A0]" />
                   </div>
-                  <h4 className="text-[#FFD9A0] font-semibold mb-3">Transformovat se</h4>
+                  <h4 className="text-[#FFD9A0] font-semibold mb-3">Transformovať sa</h4>
                   <p className="text-white/90 text-sm">
-                    Udělat krok do neznáma a objevit ženu, kterou jsi vždycky měla být. 
-                    Vrátit se domů jako bohyně.
+                    Urobiť krok do neznáma a objaviť ženu, ktorou si vždy mala byť. 
+                    Vrátiť sa domov ako bohyňa.
                   </p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ const FinalCTASection: React.FC = () => {
 
             <div className="space-y-6">
               <p className="text-2xl text-white font-semibold">
-                Jakou volbu uděláš?
+                Akú voľbu urobíš?
               </p>
               
               <motion.button
@@ -135,14 +135,14 @@ const FinalCTASection: React.FC = () => {
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
                 className="group relative px-12 py-6 bg-[#FFD9A0] text-[#264653] font-bold text-2xl rounded-full hover:bg-[#FFD9A0]/90 transition-all duration-300 shadow-2xl hover:shadow-[#FFD9A0]/25 overflow-hidden"
               >
-                <span className="relative z-10">Vybírám Transformaci</span>
+                <span className="relative z-10">Vyberám si Transformáciu</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               </motion.button>
               
               <div className="flex items-center justify-center space-x-2">
                 <Lock className="w-4 h-4 text-white/60" />
                 <p className="text-white/60 text-sm">
-                  Bezpečná rezervace • Early Bird sleva do 31. října • Pouze 8 míst zbývá
+                  Bezpečná rezervácia • Early Bird zľava do 28. februára • Obmedzený počet miest
                 </p>
               </div>
             </div>
@@ -157,10 +157,10 @@ const FinalCTASection: React.FC = () => {
             className="mt-16 pt-12 border-t border-white/20"
           >
             <p className="text-xl text-white/80 font-dancing-script">
-              Vrať se domů do sebe, sestro.
+              Vráť sa domov k sebe, sestra.
             </p>
             <p className="text-white/60 mt-2">
-              Tvá cesta začíná jediným klikem.
+              Tvoja cesta začína jediným kliknutím.
             </p>
           </motion.div>
         </motion.div>

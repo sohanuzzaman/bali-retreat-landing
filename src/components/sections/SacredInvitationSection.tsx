@@ -27,33 +27,33 @@ const SacredInvitationSection: React.FC = () => {
           >
             <div>
               <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#264653] mb-6 leading-tight">
-                Milá sestro,<br />
-                <span className="text-[#FFD9A0] font-dancing-script text-5xl md:text-6xl">slyšíš to volání?</span>
+                Milá sestra,<br />
+                <span className="text-[#FFD9A0] font-dancing-script text-5xl md:text-6xl">počuješ to volanie?</span>
               </h2>
               
               <div className="space-y-6 text-lg text-[#264653]/80 leading-relaxed">
                 <p>
-                  Hluboko v tobě se probouzí něco pradávného. Vzpomínka na časy, kdy ženy žily v harmonii 
-                  se svou vnitřní moudrostí, kdy každý den byl posvátným rituálem a každý dech spojením s božským.
+                  Hlboko v tebe sa prebúdza niečo pradávne. Spomienka na časy, keď ženy žili v harmónii 
+                  so svojou vnútornou múdrosťou, keď každý deň bol posvätným rituálom a každý dych spojením s božským.
                 </p>
                 
                 <p>
-                  Možná cítíš, že jsi se vzdálila své pravé podstatě. Možná toužíš po hlubším spojení 
-                  se sebou samou, po prostoru, kde můžeš být autentická, zranitelná a zároveň mocná.
+                  Možno cítiš, že si sa vzdialila svojej pravej podstate. Možno túžiš po hlbšom spojení 
+                  so sebou samou, po priestore, kde môžeš byť autentická, zraniteľná a zároveň mocná.
                 </p>
                 
                 <p className="font-semibold text-[#264653]">
-                  Tento retreat není jen dovolená. Je to <em>návrat domů k sobě</em>.
+                  Tento retreat nie je len dovolenka. Je to <em>návrat domov k sebe</em>.
                 </p>
               </div>
             </div>
 
             <div className="bg-gradient-to-r from-[#CBAACB]/20 to-[#A8DADC]/20 rounded-2xl p-8 border border-[#CBAACB]/30">
               <blockquote className="text-xl font-playfair italic text-[#264653] text-center">
-                &ldquo;V každé ženě spí bohyně. Stačí jen najít odvahu ji probudit.&rdquo;
+                &ldquo;V každej žene spí bohyňa. Stačí len nájsť odvahu ju prebudiť.&rdquo;
               </blockquote>
               <p className="text-center text-[#264653]/60 mt-4 font-dancing-script text-lg">
-                - Stanka & Ayka
+                - Stanka
               </p>
             </div>
 
@@ -63,7 +63,7 @@ const SacredInvitationSection: React.FC = () => {
               onClick={() => document.getElementById('activities')?.scrollIntoView({ behavior: 'smooth' })}
               className="inline-flex items-center px-8 py-4 bg-[#A8DADC] text-[#264653] font-semibold rounded-full hover:bg-[#A8DADC]/80 transition-all duration-300 shadow-lg group"
             >
-              Pokračuj v cestě
+              Pokračuj v ceste
               <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -81,7 +81,7 @@ const SacredInvitationSection: React.FC = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src="/images/retreat/P 1.jpg"
-                alt="Žena v meditaci při východu slunce na Bali"
+                alt="Žena v meditácii pri východe slnka na Bali"
                 width={600}
                 height={800}
                 className="object-cover w-full h-[600px]"

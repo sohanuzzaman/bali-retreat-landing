@@ -18,7 +18,7 @@ const BookingSection: React.FC = () => {
       <div className="absolute inset-0">
         <Image
           src="/images/booking-bg.jpg"
-          alt="Luxusní Bali resort"
+          alt="Luxusný Bali resort"
           fill
           className="object-cover"
         />
@@ -36,8 +36,8 @@ const BookingSection: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-8">
-              Investice do tvé<br />
-              <span className="text-[#D4A95C]">transformace</span>
+              Investícia do tvojej<br />
+              <span className="text-[#D4A95C]">transformácie</span>
             </h2>
 
             {/* Pricing Cards */}
@@ -48,27 +48,18 @@ const BookingSection: React.FC = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-cinzel font-bold text-[#D4A95C]">Early Bird</h3>
-                      <p className="text-white/80 text-sm">Do 31. října 2025</p>
+                      <p className="text-white/80 text-sm">Do 28. februára 2026</p>
                     </div>
                     <div className="text-right">
-                      <div className="text-3xl font-bold text-[#D4A95C]">3,333 €</div>
-                      <div className="text-white/60 line-through text-lg">3,555 €</div>
+                      <div className="text-3xl font-bold text-[#D4A95C]">1 999 €</div>
+                      <div className="text-white/60 line-through text-lg">2 222 €</div>
                     </div>
                   </div>
-                  <div className="bg-[#D4A95C]/20 rounded-lg p-3 mb-4">
+                  <div className="bg-[#D4A95C]/20 rounded-lg p-3">
                     <div className="flex items-center space-x-2">
                       <Clock className="w-4 h-4 text-[#FFD9A0]" />
-                      <p className="text-white text-sm font-semibold">Ušetříš 222 € při rezervaci do konce října!</p>
+                      <p className="text-white text-sm font-semibold">Ušetríš 223 € pri rezervácii do konca februára!</p>
                     </div>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-3">
-                    <p className="text-white/90 text-sm">
-                      <strong>Deposit dnes:</strong> 666 € |
-                      <strong> Zbytek:</strong> 2,667 €
-                      <span className="text-xs block mt-1 text-white/70">
-                        (splatný 60 dní před retreatum)
-                      </span>
-                    </p>
                   </div>
                 </div>
               </Card>
@@ -78,45 +69,13 @@ const BookingSection: React.FC = () => {
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-xl font-cinzel font-semibold text-white">Standardní cena</h3>
-                      <p className="text-white/60 text-sm">Od 1. listopadu 2025</p>
+                      <h3 className="text-xl font-cinzel font-semibold text-white">Štandardná cena</h3>
+                      <p className="text-white/60 text-sm">Od 1. marca 2026</p>
                     </div>
-                    <div className="text-2xl font-bold text-white">3,555 €</div>
-                  </div>
-                  <div className="bg-white/10 rounded-lg p-3">
-                    <p className="text-white/90 text-sm">
-                      <strong>Deposit dnes:</strong> 666 € |
-                      <strong> Zbytek:</strong> 2,889 €
-                      <span className="text-xs block mt-1 text-white/70">
-                        (splatný 60 dní před retreatum)
-                      </span>
-                    </p>
+                    <div className="text-2xl font-bold text-white">2 222 €</div>
                   </div>
                 </div>
               </Card>
-            </div>
-
-            {/* What's included */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-              <h4 className="text-xl font-cinzel font-semibold text-white mb-4">V ceně je zahrnuto:</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-white/90 text-sm">
-                {[
-                  '11 nocí v luxusním ubytování',
-                  'Všechny denní aktivity',
-                  '3x denně rostlinná strava',
-                  'Ceremonie s kakaem',
-                  'Očistné rituály',
-                  '2 balijské masáže',
-                  'Všechny vstupy a transfery',
-                  'Online komunita od března 2026',
-                  'Podpora facilitátorek 24/7'
-                ].map((item, index) => (
-                  <div key={index} className="flex items-center">
-                    <span className="text-[#2AB8A6] mr-2">✓</span>
-                    {item}
-                  </div>
-                ))}
-              </div>
             </div>
           </motion.div>
 
@@ -130,14 +89,14 @@ const BookingSection: React.FC = () => {
             <Card className="bg-white/95 backdrop-blur-sm border border-white/50">
               <div className="p-8 text-center">
                 <h3 className="text-2xl font-playfair font-bold text-[#0D2C36] mb-6">
-                  Rezervuj si své místo
+                  Rezervuj si svoje miesto
                 </h3>
                 
                 <div className="mb-8">
-                  <div className="text-4xl font-bold text-[#D4A95C] mb-2">666 €</div>
-                  <p className="text-[#0D2C36]/80 text-lg mb-4">Deposit pro rezervaci místa</p>
+                  <div className="text-4xl font-bold text-[#D4A95C] mb-2">1 999 €</div>
+                  <p className="text-[#0D2C36]/80 text-lg mb-4">Early Bird cena</p>
                   <p className="text-sm text-[#0D2C36]/60">
-                    Zbývající částka splatná 60 dní před retreatum
+                    Platné do 28. februára 2026
                   </p>
                 </div>
 
@@ -148,11 +107,11 @@ const BookingSection: React.FC = () => {
                         <circle cx="4" cy="4" r="3"/>
                       </svg>
                     </div>
-                    <span className="font-semibold text-[#0D2C36]">Bezpečná platba přes Stripe</span>
+                    <span className="font-semibold text-[#0D2C36]">Bezpečná platba cez Stripe</span>
                   </div>
                   <p className="text-sm text-[#0D2C36]/80">
-                    Budeš přesměrována na bezpečnou platební stránku Stripe. 
-                    Všechny osobní a platební údaje vyplníš tam.
+                    Budeš presmerovaná na bezpečnú platobnú stránku Stripe. 
+                    Všetky osobné a platobné údaje vyplníš tam.
                   </p>
                 </div>
 
@@ -160,7 +119,7 @@ const BookingSection: React.FC = () => {
                   onClick={handleBookingClick}
                   className="w-full py-4 bg-[#D4A95C] text-[#0D2C36] font-montserrat font-bold text-lg rounded-lg hover:bg-[#D4A95C]/90 transition-colors duration-300 shadow-lg flex items-center justify-center space-x-2 mb-6"
                 >
-                  <span>Rezervovat nyní - 666 € deposit</span>
+                  <span>Rezervovať teraz</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -168,10 +127,10 @@ const BookingSection: React.FC = () => {
 
                 <div className="text-center mb-6">
                   <p className="text-[#0D2C36]/60 text-sm font-montserrat mb-4">
-                    Nejsi ještě připravená rezervovat?
+                    Nie si ešte pripravená rezervovať?
                   </p>
                   <button className="text-[#2AB8A6] font-montserrat font-semibold hover:underline">
-                    Připoj se k přípravné komunitě
+                    Pripoj sa k prípravnej komunite
                   </button>
                 </div>
 
@@ -179,7 +138,7 @@ const BookingSection: React.FC = () => {
                   <div className="flex items-center justify-center space-x-2">
                     <Lock className="w-4 h-4 text-[#A8DADC]" />
                     <p className="text-[#0D2C36] text-sm font-montserrat">
-                      <strong>Bezpečná rezervace</strong> • Možnost zrušení do 60 dní před odjezdem
+                      <strong>Bezpečná rezervácia</strong>
                     </p>
                   </div>
                 </div>
